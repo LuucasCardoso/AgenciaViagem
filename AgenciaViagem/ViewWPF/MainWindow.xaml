@@ -4,9 +4,106 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewWPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d" Height="498" Width="858" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF3F3F3"/>
+                    <GradientStop Color="#FFD1CFCF" Offset="1"/>
+                    <GradientStop Color="#FFF7F2F2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+
+                <DropShadowEffect BlurRadius="20" Color="#FFF3F7F7" RenderingBias="Quality" ShadowDepth="1"/>
+
+            </Grid.Effect>
+            
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF010164"/>
+                        <GradientStop Color="#FF0B3591"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock Text="Travel Agency" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Impact" FontStyle="Normal" Foreground="#FFE8DDDD"/>
+            </Grid>
+            
+            <StackPanel Grid.Row="1">
+                <Button Margin="15">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Airplane"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Passagens Aereas" />
+                    </Grid>
+                </Button>
+                
+                <Button Margin="15">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Hotel"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Hoteis" />
+                    </Grid>
+                </Button>
+                
+                <Button Margin="15">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Package"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Pacotes Completos" />
+                    </Grid>
+                </Button>
+
+                <Button Margin="15">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Office"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Travel Agency" />
+                    </Grid>
+                </Button>
+
+                <Button Margin="15">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Information"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Informações" />
+                    </Grid>
+                </Button>
+                
+            </StackPanel>
+
+        </Grid>
+
+
+
+        <Grid x:Name="GridBarraTitulo" Background="#FF165AD4" MouseDown="GridBarraTitulo_MouseDown" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Bell"/>
+                </Button>
+                <Button  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Account"/>
+                </Button>
+                <Button x:Name="ButtonFechar"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonFechar_Click">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
+
+
     </Grid>
+
 </Window>
