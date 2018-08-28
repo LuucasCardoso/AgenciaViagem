@@ -30,7 +30,7 @@ namespace ViewWPF
             Application.Current.Shutdown();
         }
 
-        private void GridBarraTitulo_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
