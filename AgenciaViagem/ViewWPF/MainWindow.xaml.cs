@@ -34,5 +34,10 @@ namespace ViewWPF
         {
             DragMove();
         }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -24,5 +24,10 @@ namespace ViewWPF.telas
         {
             InitializeComponent();
         }
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
