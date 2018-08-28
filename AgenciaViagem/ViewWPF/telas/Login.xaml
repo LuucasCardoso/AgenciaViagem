@@ -37,6 +37,6 @@
         
         <Button VerticalAlignment="Bottom" Margin="0,85" Width="150" Content="LOGIN"/>
         
-        <TextBlock Text="ESQUECEU SUA SENHA?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50" Foreground="Gray" Cursor="Hand"/>
+       <TextBlock Text="ESQUECEU SUA SENHA?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50" Foreground="Gray" Cursor="Hand"/>
     </Grid>
 </Page>

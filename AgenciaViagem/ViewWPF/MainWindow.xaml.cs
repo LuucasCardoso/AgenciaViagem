@@ -37,7 +37,7 @@ namespace ViewWPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            ButtonLogin.show();
         }
     }
 }
