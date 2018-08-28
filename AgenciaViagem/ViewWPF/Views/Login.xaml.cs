@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ViewWPF.telas
+namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Login.xam
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class Login : Window
     {
         public Login()
         {
             InitializeComponent();
-        }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
+            cadeado.Source = new BitmapImage(new Uri(@"/Assets/login.png", UriKind.Relative));
         }
     }
 }

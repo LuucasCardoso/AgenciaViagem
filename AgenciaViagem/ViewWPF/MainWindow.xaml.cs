@@ -10,13 +10,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ViewWPF
+namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para MainWindow.xam
+    /// Interaction logic for Index.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -24,20 +23,19 @@ namespace ViewWPF
         {
             InitializeComponent();
         }
-
-        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
-
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            ButtonLogin.show();
+            Login objLogin = new Login();
+            this.Visibility = Visibility.Hidden;
+            objLogin.Show();
         }
     }
 }
