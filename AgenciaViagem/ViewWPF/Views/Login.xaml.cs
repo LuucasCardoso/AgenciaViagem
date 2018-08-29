@@ -34,5 +34,16 @@ namespace ViewWPF.Views
             Application.Current.Shutdown();
         }
 
+        private void ButtonLogin1_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow objMainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            objMainWindow.Show();
+        }
+
+        private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

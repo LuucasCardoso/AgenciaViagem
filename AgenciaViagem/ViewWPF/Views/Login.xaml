@@ -43,9 +43,9 @@
             </StackPanel>
         </Grid>
 
-        <Button VerticalAlignment="Bottom" Margin="96,0,96,85" Width="150" Content="LOGIN"/>
+        <Button x:Name="ButtonLogin1" VerticalAlignment="Bottom" Margin="96,0,96,85" Width="150" Content="LOGIN" Click="ButtonLogin1_Click"/>
 
-        <Button VerticalAlignment="Bottom"  Width="150" Content="Cadastrar" Height="36" Margin="96,0,96,35"/>
+        <Button x:Name="ButtonCadastrar" VerticalAlignment="Bottom"  Width="150" Content="CADASTRAR" Height="36" Margin="96,0,96,35" Click="ButtonCadastrar_Click"/>
 
 
     </Grid>
