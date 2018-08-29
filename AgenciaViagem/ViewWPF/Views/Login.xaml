@@ -7,9 +7,17 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
       Title="Login" Height="500" Width="350" WindowStyle="None">
-
-    <Grid Background="#FFF9F9F9">
-        <Rectangle Height="280" VerticalAlignment="Top">
+    <Grid Background="#FFF9F9F9" MouseDown="Grid_MouseDown">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0,28,0,0"/>
+        <Grid VerticalAlignment="Top" Height="33" Background="#FF4C63F3">
+            <Button x:Name="ButtonFechar" Width="Auto" Height="28" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Click="ButtonFechar_Click" Margin="307,0,0,0" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="Power"/>
+            </Button>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,198,0" Width="144" RenderTransformOrigin="0.482,0.5">
+                <TextBlock Text="Travel Agency" HorizontalAlignment="Center" FontSize="20" FontFamily="Segoe UI Semibold" Margin="10 0"/>
+            </StackPanel>
+        </Grid>
+        <Rectangle Height="245" VerticalAlignment="Top" Margin="0,33,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF9EE00"/>
@@ -19,26 +27,26 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Image x:Name="cadeado"  Width="100" Height="100" VerticalAlignment="Top" Margin="20"/>
+        <Image x:Name="cadeado"  Width="100" Height="95" VerticalAlignment="Top" Margin="121,60,121,0"/>
 
-        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,100">
+        <Rectangle Width="280" Height="285" Fill="White" VerticalAlignment="Bottom" Margin="31,0,31,22" RenderTransformOrigin="0.504,0.855">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
             </Rectangle.Effect>
         </Rectangle>
 
-        <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100">
-            <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+        <Grid Width="280" Height="207" VerticalAlignment="Bottom" Margin="31,0,31,100">
+            <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="114,23,114,0" Foreground="Gray" FontSize="18" Height="23"/>
             <StackPanel VerticalAlignment="Center" Margin="10">
                 <TextBox materialDesign:HintAssist.Hint="EMAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
                 <PasswordBox materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,10"/>
             </StackPanel>
         </Grid>
 
-        <Button VerticalAlignment="Bottom" Margin="0,85" Width="150" Content="LOGIN"/>
+        <Button VerticalAlignment="Bottom" Margin="96,0,96,85" Width="150" Content="LOGIN"/>
 
-        <TextBlock Text="ESQUECEU SUA SENHA?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50" Foreground="Gray" Cursor="Hand"/>
+        <Button VerticalAlignment="Bottom"  Width="150" Content="Cadastrar" Height="36" Margin="96,0,96,35"/>
 
-        
+
     </Grid>
 </Window>

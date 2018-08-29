@@ -24,5 +24,15 @@ namespace ViewWPF.Views
             InitializeComponent();
             cadeado.Source = new BitmapImage(new Uri(@"/Assets/login.png", UriKind.Relative));
         }
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }
