@@ -8,8 +8,6 @@ Funcionalidades:
 - Sistema de Login para Clientes
 - Reserva de Viagem Aérea
 - Reserva de Hospedagem em Hotéis
-- Serviços de Bordo
-- Serviços de Quarto
 
 Classes:
 - Pessoa (Funcionario e Cliente)
