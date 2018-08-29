@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewWPF", "ViewWPF\ViewWPF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{085E22AF-C521-4395-83E4-00F1AA89196E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{663E8027-3FBC-4E77-A3C8-1E5A14518026}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Modelos\Models.csproj", "{663E8027-3FBC-4E77-A3C8-1E5A14518026}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
