@@ -42,6 +42,17 @@ namespace ViewWPF.Views
         {
             int index = ListViewMenu.SelectedIndex;
             MoveCursorMenu(index);
+
+            switch (index)
+            {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlInicio());
+                    break;
+                default:
+                    break;
+                }
+
         }
 
         private void MoveCursorMenu(int index)
