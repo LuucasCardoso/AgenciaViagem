@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.Models
+namespace Models.Entities
 {
-    class Usuario
+    public class Usuario
     {
         [Key]
         [Column(Order = 0)]
@@ -26,5 +26,6 @@ namespace Models.Models
         public string User { get; set; }
         [Column(Order = 4)]
         public bool Administrador { get; set; }
+        public bool Ativo { get; set; }
     }
 }
