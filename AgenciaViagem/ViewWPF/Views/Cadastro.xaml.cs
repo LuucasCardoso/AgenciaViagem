@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Lógica interna para Cadastro.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Cadastro : Window
     {
-        public Login()
+        public Cadastro()
         {
             InitializeComponent();
-            cadeado.Source = new BitmapImage(new Uri(@"/Assets/login.png", UriKind.Relative));
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -34,18 +33,11 @@ namespace ViewWPF.Views
             Application.Current.Shutdown();
         }
 
-        private void ButtonLogin1_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow objMainWindow = new MainWindow();
-            this.Visibility = Visibility.Hidden;
-            objMainWindow.Show();
-        }
-
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro objCadastro = new Cadastro();
+            Login objLogin= new Login();
             this.Visibility = Visibility.Hidden;
-            objCadastro.Show();
+            objLogin.Show();
         }
     }
 }
