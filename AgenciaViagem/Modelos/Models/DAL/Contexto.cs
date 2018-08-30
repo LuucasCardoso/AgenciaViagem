@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Models.Models.DAL
     {
         public Contexto(): base("AgenciaViagemDB")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Contexto, Configuration>());
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
