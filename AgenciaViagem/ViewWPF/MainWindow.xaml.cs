@@ -37,5 +37,17 @@ namespace ViewWPF.Views
             this.Visibility = Visibility.Hidden;
             objLogin.Show();
         }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            MoveCursorMenu(index);
+        }
+
+        private void MoveCursorMenu(int index)
+        {
+            TrainsitionigContetSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
+        }
     }
 }
