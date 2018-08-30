@@ -1,11 +1,11 @@
-namespace Modelos.Migrations
+namespace Models.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public class Configuration : DbMigrationsConfiguration<Models.Models.DAL.Contexto>
+    public class Configuration : DbMigrationsConfiguration<Models.DAL.Contexto>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Modelos.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Models.Models.DAL.Contexto context)
+        protected override void Seed(Models.DAL.Contexto context)
         {
             //  This method will be called after migrating to the latest version.
 
