@@ -14,29 +14,40 @@ namespace CriaBanco
         {
             Console.WriteLine("Populando Banco...");
             var db = new Contexto();
-            if()
-            db.Usuarios.Add(new Usuario()
+            var lista = from u in db.Usuarios
+                        where u.Nome == "Admin"
+                        select u;
+            if (!lista.Any())
             {
-                User = "admin",
-                Password = "admin",
-                Administrador = true,
-                Nome = "Admin",
-                Email = "admin@admin.com",
-                Ativo = true,
-                Cpf = "12345678910",
-                Telefone = "5541999999999"
-            });
-            db.Usuarios.Add(new Usuario()
+                db.Usuarios.Add(new Usuario()
+                {
+                    User = "admin",
+                    Password = "admin",
+                    Administrador = true,
+                    Nome = "Admin",
+                    Email = "admin@admin.com",
+                    Ativo = true,
+                    Cpf = "12345678910",
+                    Telefone = "5541999999999"
+                });
+            }
+            lista = from u in db.Usuarios
+                    where u.Nome == "Teste"
+                    select u;
+            if (!lista.Any())
             {
-                User = "teste",
-                Password = "teste",
-                Administrador = false,
-                Nome = "Teste",
-                Email = "teste@teste.com",
-                Ativo = true,
-                Cpf = "10123456789",
-                Telefone = "5541888888888"
-            });
+                db.Usuarios.Add(new Usuario()
+                {
+                    User = "teste",
+                    Password = "teste",
+                    Administrador = false,
+                    Nome = "Teste",
+                    Email = "teste@teste.com",
+                    Ativo = true,
+                    Cpf = "10123456789",
+                    Telefone = "5541888888888"
+                });
+            }
             db.SaveChanges();
             Console.WriteLine("Banco Populado!!");
             Console.ReadKey();
