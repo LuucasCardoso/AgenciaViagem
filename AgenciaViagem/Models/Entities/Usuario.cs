@@ -18,16 +18,16 @@ namespace Models.Entities
         [Required]
         public string Password { get; set; }
         [Required]
-        [Range(4, 12, ErrorMessage = "O usuário deve conter entre 4 e 12 caracteres!")]
+        [StringLength(12, ErrorMessage = "O campo user deve ter no máximo 12 dígitos!", MinimumLength = 4)]
         public string User { get; set; }
         [Required]
         [MaxLength(30, ErrorMessage ="Nome precisa ter no máximo 30 caracteres!")]
         public string Nome { get; set; }
         [Required]
-        [Range(11,11,ErrorMessage ="O campo CPF precisa ter 11 dígitos!")]
+        [StringLength(11,ErrorMessage ="O campo CPF precisa ter 11 dígitos!")]
         public string Cpf { get; set; }
         [Required]
-        [Range(13, 14, ErrorMessage = "O campo Telefone precisa ter Código do País, do Estado e número!")]
+        [StringLength(14, ErrorMessage = "O campo Telefone precisa ter Código do País, do Estado e número!")]
         public string Telefone { get; set; }
         public bool Administrador { get; set; }
         public bool Ativo { get; set; }
