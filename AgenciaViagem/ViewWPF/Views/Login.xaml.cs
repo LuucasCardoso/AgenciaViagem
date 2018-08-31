@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,9 +37,14 @@ namespace ViewWPF.Views
 
         private void ButtonLogin1_Click(object sender, RoutedEventArgs e)
         {
+            var db = new Contexto();
+            var user = from u in db.Usuarios
+                       where u.User == campoUser.Text
+                       select u;
             MainWindow objMainWindow = new MainWindow();
             this.Visibility = Visibility.Hidden;
             objMainWindow.Show();
+            
         }
 
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
