@@ -37,7 +37,7 @@
 
         </StackPanel>
 
-        <Grid Margin=" 300 60 60 60">
+        <Grid Margin="250 55 0 0">
             
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Top">
                 

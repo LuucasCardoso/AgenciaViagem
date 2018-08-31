@@ -49,6 +49,11 @@ namespace ViewWPF.Views
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new UserControlInicio());
                     break;
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Pacotes());
+                    break;
+                    
                 default:
                     break;
                 }
