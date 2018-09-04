@@ -142,6 +142,10 @@
     <Resource Include="Assets\login.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controllers\Controllers.csproj">
+      <Project>{085e22af-c521-4395-83e4-00f1aa89196e}</Project>
+      <Name>Controllers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{663e8027-3fbc-4e77-a3c8-1e5a14518026}</Project>
       <Name>Models</Name>
