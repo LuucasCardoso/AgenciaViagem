@@ -21,9 +21,9 @@ namespace ViewWPF.Views
     /// <summary>
     /// Interaction logic for Index.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Admin : Window
     {
-        public MainWindow()
+        public Admin()
         {
             InitializeComponent();
         }
@@ -44,16 +44,16 @@ namespace ViewWPF.Views
             switch (index)
             {
                 case 0:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlInicio());
+                    GridPrincipalAdm.Children.Clear();
+                    GridPrincipalAdm.Children.Add(new UserControlInicio());
                     break;
                 case 1:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Passagens ());
+                    GridPrincipalAdm.Children.Clear();
+                    GridPrincipalAdm.Children.Add(new Passagens ());
                     break;
                 case 3:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Pacotes());
+                    GridPrincipalAdm.Children.Clear();
+                    GridPrincipalAdm.Children.Add(new Pacotes());
                     break;
 
                 default:
@@ -64,8 +64,8 @@ namespace ViewWPF.Views
 
         private void MoveCursorMenuAdm(int index)
         {
-            TrainsitionigContetSlide.OnApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
+            TrainsitionigContetSlideAdm.OnApplyTemplate();
+            GridCursorAdm.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
         }
     
 }
