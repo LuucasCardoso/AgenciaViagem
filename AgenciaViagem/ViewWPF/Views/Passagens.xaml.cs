@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Pacotes.xam
+    /// Interação lógica para Passagens.xam
     /// </summary>
-    public partial class Pacotes : UserControl
+    public partial class Passagens : UserControl
     {
-        public Pacotes()//pacotes
+        public Passagens()
         {
             InitializeComponent();
         }
+
     }
 }

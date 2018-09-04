@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,25 +27,19 @@ namespace ViewWPF.Views
         {
             InitializeComponent();
         }
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        private void GridAdm_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
-        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+
+        private void ButtonFecharAdm_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        private void ListViewMenuAdm_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Login objLogin = new Login();
-            this.Visibility = Visibility.Hidden;
-            objLogin.Show();
-        }
-
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = ListViewMenu.SelectedIndex;
-            MoveCursorMenu(index);
+            int index = ListViewMenuAdm.SelectedIndex;
+            MoveCursorMenuAdm(index);
 
             switch (index)
             {
@@ -51,23 +49,24 @@ namespace ViewWPF.Views
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Passagens());
+                    GridPrincipal.Children.Add(new Passagens ());
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Pacotes());
                     break;
-                    
+
                 default:
                     break;
-                }
+            }
 
         }
 
-        private void MoveCursorMenu(int index)
+        private void MoveCursorMenuAdm(int index)
         {
             TrainsitionigContetSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
         }
-    }
+    
+}
 }
