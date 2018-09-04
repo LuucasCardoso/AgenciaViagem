@@ -33,9 +33,9 @@ namespace ViewWPF.Views
         }
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            Login objLogin = new Login();
+            Admin objAdmin = new Admin();
             this.Visibility = Visibility.Hidden;
-            objLogin.Show();
+            objAdmin.Show();
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
