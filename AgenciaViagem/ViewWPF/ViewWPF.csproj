@@ -76,6 +76,9 @@
     <Compile Include="Views\Pacotes.xaml.cs">
       <DependentUpon>Pacotes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Passagens.xaml.cs">
+      <DependentUpon>Passagens.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControlInicio.xaml.cs">
       <DependentUpon>UserControlInicio.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pacotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Passagens.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
