@@ -9,10 +9,10 @@
              Height="auto" Width="auto">
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="476">
-                <ComboBox VerticalAlignment="Stretch" Width="206" Margin="10,32,0,418" Background="FloralWhite"/>
-                <ComboBox VerticalAlignment="Stretch" Width="140" Margin="10,32,0,418" Background="FloralWhite"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60">
+                
             </StackPanel>
+            
         </materialDesign:TransitioningContent>
     </Grid>
 </UserControl>
