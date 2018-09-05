@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:ViewWPF.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              mc:Ignorable="d" 
-             Height="auto" Width="auto">
+             Height="45.5" Width="auto">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="91*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60">
                 <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País de Embarque" Width="185" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
                 <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Linha Aérea" Width="185" Height="26" Margin="12,17,0,17" Background="FloralWhite"/>
@@ -16,19 +20,49 @@
 
             </StackPanel>
         </materialDesign:TransitioningContent>
-        
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide2" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="60" Margin="0,65,0,-65">
+
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide2" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="60" Margin="0,43,0,-57">
                 <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País de Desembarque" Width="185" Height="26" Margin="12,17,0,17" Background="FloralWhite"/>
                 <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Data de Volta" Width="185" Height="26" Margin="12,17,0,17" Background="FloralWhite"/>
                 <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Data de Ida" Width="185" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
             </StackPanel>
         </materialDesign:TransitioningContent>
 
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide3" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="60" Margin="0,125,0,-125">
-            <Button Width="580" Content="Buscar Passagens Disponíveis" FontFamily="Champagne &amp; Limousines" Margin="12,14"/>
-        </StackPanel>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide3" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="60" Margin="-2,94,2,-108">
+                <Button Width="580" Content="Buscar Passagens Disponíveis" FontFamily="Champagne &amp; Limousines" Margin="12,14"/>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide4" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Height="270" Background="Yellow" Margin="20,162,0,-386">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="166*"/>
+                    <ColumnDefinition Width="35*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                </Grid.Effect>
+
+                <StackPanel Width="200" Grid.ColumnSpan="2">
+                    <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="pacote x" Foreground="DodgerBlue"/>
+                    <Image Source="/Assets/login.png" Width="200" Height="150" Stretch="UniformToFill" />
+                    <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Detalhes do pacote informando os dados da passagem, do destino e do Hotel definidos no Pacote."/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
+                        <Button Width="100" Content="Detalhes" FontFamily="Champagne &amp; Limousines" Margin="10"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
         </materialDesign:TransitioningContent>
     </Grid>
+
 </UserControl>

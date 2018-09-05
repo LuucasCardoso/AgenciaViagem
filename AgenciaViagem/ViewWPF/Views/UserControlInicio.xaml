@@ -13,17 +13,14 @@
                 <StackPanel Margin="10">
                 <TextBlock Text="Travel Agency" FontFamily="Cooper Black" Foreground="#FFC00000"/>
                     <TextBlock FontSize="18" Width="250" FontFamily="Champagne &amp; Limousines" Margin="5" TextWrapping="Wrap">
-                        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                        A Travel Agency lhe proporciona a melhor experiência para suas férias. Aqui você pode escolher exatamente onde ir, onde ficar e quando voltar dos lugares mais buscados no mundo. Nosso objetivo sempre será o seu conforto, pois o que acreditamos que você merece as melhores férias da sua vida e para isso deixamos que você a monte conforme seu gosto ou até mesmo utilize pacotes que já foram utilizados e muito bem recomendados pela nossa equipe.
                     </TextBlock>
                 <StackPanel>
 
                     
                 </StackPanel>
             </StackPanel>
-                <Image Margin="10" Width="200" Height="200" Source="/Assets/Inicio.jpg"/>
+                <Image Margin="10" Width="200" Height="420" Source="/Assets/TravelAgency.png"/>
             </StackPanel>
         </materialDesign:TransitioningContent>
     </Grid>
