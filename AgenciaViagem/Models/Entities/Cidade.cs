@@ -8,7 +8,7 @@ namespace Models.Entities
 {
     class Cidade
     {
-        public int Id { get; set; }
+        public int CidadeId { get; set; }
         public string Nome { get; set; }
 
         public virtual ICollection<Endereco> _Enderecos { get; set; }

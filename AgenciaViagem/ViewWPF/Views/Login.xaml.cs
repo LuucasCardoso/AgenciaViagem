@@ -48,7 +48,7 @@ namespace ViewWPF.Views
             }
             else
             {
-                lblError.Content = "Senha incorreta!";
+                lblError.Content = "Usuário/Senha incorreto(s) ou Usuário Desativado!";
             }
             
         }

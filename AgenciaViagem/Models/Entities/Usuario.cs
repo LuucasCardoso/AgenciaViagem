@@ -11,7 +11,7 @@ namespace Models.Entities
     public class Usuario
     {
         [Key]
-        public int Id { get; set; }
+        public int UsuarioId { get; set; }
         [Required]
         [EmailAddress(ErrorMessage ="Email inválido!")]
         public string Email { get; set; }

@@ -14,12 +14,12 @@ namespace Models.DAL
         {
             //Cria Usuario
         }
-        public Usuario Show(string user)
+        public Usuario Read(string user)
         {
             var usuariodb = from u in db.Usuarios
                         where u.User == user
                         select u;
-            return usuariodb.First();
+            return usuariodb.FirstOrDefault();
         }
         public void Destroy()
         {

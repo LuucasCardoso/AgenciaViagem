@@ -168,5 +168,8 @@
   <ItemGroup>
     <Resource Include="Assets\TravelAgency.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

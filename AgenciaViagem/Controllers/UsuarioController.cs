@@ -14,15 +14,15 @@ namespace Controllers
         public bool AuthUsuario(string user, string pass)
         {
             Usuario usuarioDB = new Usuario();
-            usuarioDB = dao.Show(user);
-            if(usuarioDB.Password == pass)
+            usuarioDB = dao.Read(user);
+            if(usuarioDB.Password == pass && usuarioDB.Ativo)
             {
                 //Sucesso
                 return true;
             }
             else
             {
-                //Acesso Negado
+                //Usuário/Senha incorreto(s) ou Usuário Desativado!
                 return false;
             }
         }
