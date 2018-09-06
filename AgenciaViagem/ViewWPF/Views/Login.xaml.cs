@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewWPF.ViewModels;
 
 namespace ViewWPF.Views
 {
@@ -24,6 +25,9 @@ namespace ViewWPF.Views
         public Login()
         {
             InitializeComponent();
+            //UsuarioViewModel vm = new UsuarioViewModel();
+            //vm.Email = "";
+            //DataContext = vm;
             cadeado.Source = new BitmapImage(new Uri(@"/Assets/login.png", UriKind.Relative));
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
