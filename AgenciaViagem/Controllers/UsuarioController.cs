@@ -15,6 +15,7 @@ namespace Controllers
         {
             Usuario usuarioDB = new Usuario();
             usuarioDB = dao.Read(user);
+            if (usuarioDB == null) return false;
             if(usuarioDB.Password == pass && usuarioDB.Ativo)
             {
                 //Sucesso

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewWPF.ViewModels;
 
 namespace ViewWPF.Views
 {
@@ -22,6 +24,7 @@ namespace ViewWPF.Views
         public Cadastro()
         {
             InitializeComponent();
+            DataContext = new UsuarioViewModel();
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -35,9 +38,12 @@ namespace ViewWPF.Views
 
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
-            Login objLogin= new Login();
-            this.Visibility = Visibility.Hidden;
-            objLogin.Show();
+            UsuarioViewModel cvm = DataContext as UsuarioViewModel;
+            cvm.Password = passBox.Password;
+
+            //Login objLogin= new Login();
+            //this.Visibility = Visibility.Hidden;
+            //objLogin.Show();
         }
     }
 }
