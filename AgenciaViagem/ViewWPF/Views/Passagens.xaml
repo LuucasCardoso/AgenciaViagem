@@ -35,15 +35,6 @@
             </StackPanel>
         </materialDesign:TransitioningContent>
 
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide4" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-        <Grid Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            </Grid>
-        </materialDesign:TransitioningContent>
     </Grid>
 
 </UserControl>

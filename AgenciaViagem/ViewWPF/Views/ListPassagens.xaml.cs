@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Passagens.xam
+    /// Interação lógica para ListPassagens.xam
     /// </summary>
-    public partial class Passagens : UserControl
+    public partial class ListPassagens : UserControl
     {
-        public Passagens()
+        public ListPassagens()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs evento)
-        {
-            GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new ListPassagens());
         }
     }
 }
