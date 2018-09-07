@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -40,7 +42,19 @@ namespace ViewWPF.Views
         {
             UsuarioViewModel cvm = DataContext as UsuarioViewModel;
             cvm.Password = passBox.Password;
-
+            UsuarioController controller = new UsuarioController();
+            Usuario usuario = new Usuario
+            {
+                Nome = cvm.Nome,
+                Email = cvm.Email,
+                Password = cvm.Password,
+                User = cvm.User,
+                Cpf = cvm.Cpf,
+                Telefone = cvm.Telefone,
+                Administrador = false,
+                Ativo = true
+            };
+            controller.CadastroUsuario(usuario);
             //Login objLogin= new Login();
             //this.Visibility = Visibility.Hidden;
             //objLogin.Show();

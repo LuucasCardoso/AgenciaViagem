@@ -11,6 +11,7 @@ namespace Controllers
     public class UsuarioController
     {
         static readonly UsuarioDAO dao = new UsuarioDAO();
+
         public bool AuthUsuario(string user, string pass)
         {
             Usuario usuarioDB = new Usuario();
@@ -26,6 +27,11 @@ namespace Controllers
                 //Usuário/Senha incorreto(s) ou Usuário Desativado!
                 return false;
             }
+        }
+
+        public void CadastroUsuario(Usuario usuario)
+        {
+            dao.Create(usuario);
         }
     }
 }

@@ -10,9 +10,11 @@ namespace Models.DAL
     public class UsuarioDAO
     {
         static readonly Contexto db = new Contexto();
-        public void Create()
+
+        public void Create(Usuario usuario)
         {
-            //Cria Usuario
+            db.Usuarios.Add(usuario);
+            db.SaveChanges();
         }
         public Usuario Read(string user)
         {
