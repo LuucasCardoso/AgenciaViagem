@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Passagens.xam
+    /// Interação lógica para BuscaPassagens.xam
     /// </summary>
-    public partial class Passagens : UserControl
+    public partial class BuscaPassagens : UserControl
     {
-        public Passagens()
+        public BuscaPassagens()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new BuscaPassagens());
+
         }
     }
 }
