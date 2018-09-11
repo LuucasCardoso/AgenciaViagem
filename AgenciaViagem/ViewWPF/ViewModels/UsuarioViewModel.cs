@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,6 +19,17 @@ namespace ViewWPF.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private Usuario usuario;
+
+        public Usuario _Usuario
+        {
+            get { return usuario; }
+            set
+            {
+                usuario = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         private int usuarioId;
         public int UsuarioId

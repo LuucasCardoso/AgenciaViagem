@@ -41,8 +41,9 @@ namespace ViewWPF.Views
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             UsuarioViewModel cvm = DataContext as UsuarioViewModel;
-            cvm.Password = passBox.Password;
+            cvm._Usuario.Password = passBox.Password;
             UsuarioController controller = new UsuarioController();
+            controller.CadastroUsuario(cvm._Usuario);
             Usuario usuario = new Usuario
             {
                 Nome = cvm.Nome,
