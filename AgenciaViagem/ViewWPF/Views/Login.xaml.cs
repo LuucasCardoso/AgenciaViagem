@@ -46,7 +46,7 @@ namespace ViewWPF.Views
             lblError.Content = "";
             lblError.SetCurrentValue(ForegroundProperty, Brushes.Red);
             UsuarioController controller = new UsuarioController();
-            if (controller.AuthUsuario(campoUser.Text, campoPass.Password))
+            if (controller.AutenticarUsuario(campoUser.Text, campoPass.Password))
             {
                 Usuario user = controller.BuscarUsuarioPorNome(campoUser.Text);
                 if (user.Administrador)

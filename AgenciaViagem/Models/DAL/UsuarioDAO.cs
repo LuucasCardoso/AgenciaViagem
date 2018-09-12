@@ -16,14 +16,7 @@ namespace Models.DAL
             db.Usuarios.Add(usuario);
             db.SaveChanges();
         }
-        public Usuario Read(int id)
-        {
-            var usuariodb = from u in db.Usuarios
-                            where u.UsuarioId == id
-                            select u;
-            return usuariodb.FirstOrDefault();
-        }
-        public Usuario ReadByUsername(string user)
+        public Usuario Read(string user)
         {
             var usuariodb = from u in db.Usuarios
                         where u.User == user

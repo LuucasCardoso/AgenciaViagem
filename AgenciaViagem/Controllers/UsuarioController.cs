@@ -12,10 +12,10 @@ namespace Controllers
     {
         static readonly UsuarioDAO dao = new UsuarioDAO();
 
-        public bool AuthUsuario(string user, string pass)
+        public bool AutenticarUsuario(string user, string pass)
         {
             Usuario usuarioDB = new Usuario();
-            usuarioDB = dao.ReadByUsername(user);
+            usuarioDB = dao.Read(user);
             if (usuarioDB == null) return false;
             if(usuarioDB.Password == pass && usuarioDB.Ativo)
             {
@@ -36,7 +36,7 @@ namespace Controllers
 
         public Usuario BuscarUsuarioPorNome(string user)
         {
-             return dao.ReadByUsername(user);
+             return dao.Read(user);
         }
     }
 }
