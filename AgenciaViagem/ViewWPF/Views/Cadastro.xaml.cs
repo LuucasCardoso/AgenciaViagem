@@ -54,7 +54,7 @@ namespace ViewWPF.Views
                 Administrador = false,
                 Ativo = true
             };
-            controller.CadastroUsuario(usuario);
+            controller.CadastrarUsuario(usuario);
             Login objLogin= new Login();
             this.Visibility = Visibility.Hidden;
             objLogin.Show();

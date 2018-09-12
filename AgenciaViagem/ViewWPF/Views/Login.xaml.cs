@@ -1,5 +1,6 @@
 ﻿using Controllers;
 using Models.DAL;
+using Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,9 +48,19 @@ namespace ViewWPF.Views
             UsuarioController controller = new UsuarioController();
             if (controller.AuthUsuario(campoUser.Text, campoPass.Password))
             {
-                MainWindow objMainWindow = new MainWindow();
-                this.Visibility = Visibility.Hidden;
-                objMainWindow.Show();
+                Usuario user = controller.BuscarUsuarioPorNome(campoUser.Text);
+                if (user.Administrador)
+                {
+                    Admin admin = new Admin();
+                    this.Visibility = Visibility.Hidden;
+                    admin.Show();
+                }
+                else
+                {
+                    MainWindow objMainWindow = new MainWindow();
+                    this.Visibility = Visibility.Hidden;
+                    objMainWindow.Show();
+                }
             }
             else
             {
