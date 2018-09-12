@@ -43,6 +43,7 @@ namespace ViewWPF.Views
         private void ButtonLogin1_Click(object sender, RoutedEventArgs e)
         {
             lblError.Content = "";
+            lblError.SetCurrentValue(ForegroundProperty, Brushes.Red);
             UsuarioController controller = new UsuarioController();
             if (controller.AuthUsuario(campoUser.Text, campoPass.Password))
             {

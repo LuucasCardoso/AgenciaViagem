@@ -41,9 +41,8 @@ namespace ViewWPF.Views
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             UsuarioViewModel cvm = DataContext as UsuarioViewModel;
-            cvm._Usuario.Password = passBox.Password;
+            cvm.Password = passBox.Password;
             UsuarioController controller = new UsuarioController();
-            controller.CadastroUsuario(cvm._Usuario);
             Usuario usuario = new Usuario
             {
                 Nome = cvm.Nome,
@@ -56,9 +55,11 @@ namespace ViewWPF.Views
                 Ativo = true
             };
             controller.CadastroUsuario(usuario);
-            //Login objLogin= new Login();
-            //this.Visibility = Visibility.Hidden;
-            //objLogin.Show();
+            Login objLogin= new Login();
+            this.Visibility = Visibility.Hidden;
+            objLogin.Show();
+            objLogin.lblError.SetCurrentValue(ForegroundProperty, Brushes.Green);
+            objLogin.lblError.Content = "Usuario criado com Sucesso!";
         }
     }
 }
