@@ -15,7 +15,7 @@ namespace Controllers
         public bool AutenticarUsuario(string user, string pass)
         {
             Usuario usuarioDB = new Usuario();
-            usuarioDB = dao.Read(user);
+            usuarioDB = dao.ReadByUsername(user);
             if (usuarioDB == null) return false;
             if(usuarioDB.Password == pass && usuarioDB.Ativo)
             {
@@ -36,7 +36,7 @@ namespace Controllers
 
         public Usuario BuscarUsuarioPorNome(string user)
         {
-             return dao.Read(user);
+             return dao.ReadByUsername(user);
         }
     }
 }
