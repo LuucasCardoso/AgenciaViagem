@@ -31,11 +31,10 @@ namespace ViewWPF.Views
         {
             Application.Current.Shutdown();
         }
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+
+        private void Dispose()
         {
-            Admin objAdmin = new Admin();
-            this.Visibility = Visibility.Hidden;
-            objAdmin.Show();
+            throw new NotImplementedException();
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -73,5 +72,14 @@ namespace ViewWPF.Views
             TrainsitionigContetSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
         }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+        }
+
+        
     }
 }
