@@ -7,18 +7,12 @@ using System.Threading.Tasks;
 
 namespace Models.Entities
 {
-    [Table("Cidades")]
-    public class Cidade
+    [Table("EmpresasAereas")]
+    public class EmpresaAerea
     {
-        public int CidadeId { get; set; }
+        public int EmpresaAereaId { get; set; }
         public string Nome { get; set; }
-
-        //Propriedades Enderecos
-        public virtual ICollection<Endereco> _Enderecos { get; set; }
-
-        //Propriedades Estado
-        public int EstadoId { get; set; }
-        public virtual Estado _Estado { get; set; }
+        public string Descricao { get; set; }
 
         //Propriedades Passagens
         public virtual ICollection<Passagem> _Passagens { get; set; }

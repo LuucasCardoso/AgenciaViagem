@@ -67,6 +67,12 @@ namespace ViewWPF.Views
             TrainsitionigContetSlideAdm.OnApplyTemplate();
             GridCursorAdm.Margin = new Thickness(0, (10 + (60 * index)), 0, 0);
         }
-    
-}
+
+        private void ButtonLogoutAdm_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+        }
+    }
 }

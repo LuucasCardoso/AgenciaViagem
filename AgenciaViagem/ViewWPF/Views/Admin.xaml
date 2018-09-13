@@ -17,8 +17,8 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
-                    <Button x:Name="ButtonLoginAdm" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
-                        <materialDesign:PackIcon Kind="Account"/>
+                    <Button x:Name="ButtonLogoutAdm" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0" Click="ButtonLogoutAdm_Click">
+                        <materialDesign:PackIcon Kind="Logout"/>
                     </Button>
                     <Button x:Name="ButtonFecharAdm" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Click="ButtonFecharAdm_Click">
                         <materialDesign:PackIcon Kind="Power"/>
@@ -46,28 +46,28 @@
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="INICIO" FontSize="20" VerticalAlignment="Center" Margin="20 0"/>
+                        <TextBlock Text="Compras Clientes" FontSize="20" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Airplane" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="EDT PASSAGENS" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Passagens " FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Hotel" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="EDT HOTEIS" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Hoteis" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Package" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="EDT PACOTES" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Pacotes" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
             </ListView>

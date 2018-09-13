@@ -23,11 +23,8 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Magnify"/>
-                    </Button>
-                    <Button x:Name="ButtonLogin" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0" Click="ButtonLogin_Click">
-                        <materialDesign:PackIcon Kind="Account"/>
+                    <Button x:Name="ButtonLogout" Width="30" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0" Click="ButtonLogout_Click">
+                        <materialDesign:PackIcon Kind="Logout"/>
                     </Button>
                     <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Click="ButtonFechar_Click">
                         <materialDesign:PackIcon Kind="Power"/>
@@ -38,9 +35,9 @@
         </StackPanel>
 
         <Grid Margin="250 55 0 0">
-            
+
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                
+
             </Grid>
 
         </Grid>
@@ -48,10 +45,10 @@
         <Grid  Width="250" HorizontalAlignment="Left" Background="#FFFFF406" Margin="0,51,0,0">
 
             <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid x:Name="GridCursor" Margin="0 10 0 0" Background="#FF0069C0" Width="10"  HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"  />
+                <Grid x:Name="GridCursor" Margin="0 70 0 0" Background="#FF0069C0" Width="10"  HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"  />
             </materialDesign:TransitioningContent>
 
-            <ListView x:Name="ListViewMenu" Margin="0 10" Foreground="Blue" FontFamily="Segoe UI Emoji" SelectionChanged="ListViewMenu_SelectionChanged">
+            <ListView x:Name="ListViewMenu" Margin="0 70" Foreground="Blue" FontFamily="Segoe UI Emoji" SelectionChanged="ListViewMenu_SelectionChanged">
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
@@ -84,13 +81,6 @@
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Cart" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Carrinho" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
-                    </StackPanel>
-                </ListViewItem>
-
-                <ListViewItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Headset" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Suporte" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
             </ListView>
