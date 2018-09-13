@@ -53,21 +53,21 @@
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Airplane" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Adc/Edt Passagens " FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Passagens " FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Hotel" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Adc/Edt Hoteis" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Hoteis" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Package" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Adc/Edt Pacotes" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <TextBlock Text="Pacotes" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
             </ListView>
