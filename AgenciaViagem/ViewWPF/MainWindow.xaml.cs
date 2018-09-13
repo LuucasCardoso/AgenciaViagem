@@ -51,7 +51,7 @@ namespace ViewWPF.Views
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Passagens());
+                    GridPrincipal.Children.Add(new ListPassagens());
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
