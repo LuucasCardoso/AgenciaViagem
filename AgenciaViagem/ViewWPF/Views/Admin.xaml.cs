@@ -26,7 +26,7 @@ namespace ViewWPF.Views
         public Admin()
         {
             InitializeComponent();
-            GridPrincipalAdm.Children.Add(new UsuarioList());
+            
         }
         private void GridAdm_MouseDown(object sender, MouseButtonEventArgs e)
         {
