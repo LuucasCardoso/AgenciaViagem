@@ -22,6 +22,7 @@ namespace ViewWPF.Views
         public MainWindow()
         {
             InitializeComponent();
+            GridPrincipal.Children.Add(new UserControlInicio());
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
