@@ -80,6 +80,9 @@
     <Compile Include="Views\Hoteis.xaml.cs">
       <DependentUpon>Hoteis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ListHoteis.xaml.cs">
+      <DependentUpon>ListHoteis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListPassagens.xaml.cs">
       <DependentUpon>ListPassagens.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,9 @@
     </Compile>
     <Compile Include="Views\Passagens.xaml.cs">
       <DependentUpon>Passagens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuartoCadastro.xaml.cs">
+      <DependentUpon>QuartoCadastro.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlInicio.xaml.cs">
       <DependentUpon>UserControlInicio.xaml</DependentUpon>
@@ -123,6 +129,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ListHoteis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListPassagens.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Passagens.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuartoCadastro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,5 +213,6 @@
   <ItemGroup>
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
