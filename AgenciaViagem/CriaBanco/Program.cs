@@ -71,11 +71,11 @@ namespace CriaBanco
                     Hidromassagem = false,
                     ServicoQuarto = false
                 });
-                Console.WriteLine("Tipo de vaga 'Básico' criada!");
+                Console.WriteLine("Tipo de quarto 'Básico' criada!");
             }
             else
             {
-                Console.WriteLine("Tipo de vaga 'Básico' já existe!");
+                Console.WriteLine("Tipo de quarto 'Básico' já existe!");
             }
             QuartoTipo = from qt in db.QuartoTipos
                              where qt.Nome == "Intermediário"
@@ -90,11 +90,11 @@ namespace CriaBanco
                     Hidromassagem = false,
                     ServicoQuarto = true
                 });
-                Console.WriteLine("Tipo de vaga 'Intermediário' criada!");
+                Console.WriteLine("Tipo de quarto 'Intermediário' criada!");
             }
             else
             {
-                Console.WriteLine("Tipo de vaga 'Intermediário' já existe!");
+                Console.WriteLine("Tipo de quarto 'Intermediário' já existe!");
             }
             QuartoTipo = from qt in db.QuartoTipos
                              where qt.Nome == "Patrão"
@@ -109,11 +109,11 @@ namespace CriaBanco
                     Hidromassagem = true,
                     ServicoQuarto = true
                 });
-                Console.WriteLine("Tipo de vaga 'Patrão' criada!");
+                Console.WriteLine("Tipo de quarto 'Patrão' criada!");
             }
             else
             {
-                Console.WriteLine("Tipo de vaga 'Patrão' já existe!");
+                Console.WriteLine("Tipo de quarto 'Patrão' já existe!");
             }
             db.SaveChanges();
             Console.WriteLine("Banco Populado!!");

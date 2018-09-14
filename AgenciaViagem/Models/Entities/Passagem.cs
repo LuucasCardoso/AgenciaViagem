@@ -23,7 +23,9 @@ namespace Models.Entities
         }
 
         //Propriedades Cidade
+        [ForeignKey("_CidadeOrigem")]
         public int CidadeOrigemId { get; set; }
+        [ForeignKey("_CidadeDestino")]
         public int CidadeDestinoId { get; set; }
         public virtual Cidade _CidadeOrigem { get; set; }
         public virtual Cidade _CidadeDestino { get; set; }
