@@ -24,5 +24,10 @@ namespace ViewWPF.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GridInferior.Visibility = Visibility.Visible;
+        }
     }
 }
