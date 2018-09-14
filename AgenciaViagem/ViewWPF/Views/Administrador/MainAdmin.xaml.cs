@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ViewWPF.Views
+namespace ViewWPF.Views.Administrador
 {
     /// <summary>
     /// Interaction logic for Index.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class MainAdmin : Window
     {
-        public Admin()
+        public MainAdmin()
         {
             InitializeComponent();
             GridPrincipalAdm.Children.Add(new UsuarioList());

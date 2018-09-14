@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewWPF.ViewModels;
+using ViewWPF.Views.Administrador;
 
 namespace ViewWPF.Views
 {
@@ -51,7 +52,7 @@ namespace ViewWPF.Views
                 Usuario user = controller.BuscarUsuarioPorNome(campoUser.Text);
                 if (user.Administrador)
                 {
-                    Admin admin = new Admin();
+                    MainAdmin admin = new MainAdmin();
                     this.Visibility = Visibility.Hidden;
                     admin.Show();
                 }

@@ -68,8 +68,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
-    <Compile Include="Views\Admin.xaml.cs">
-      <DependentUpon>Admin.xaml</DependentUpon>
+    <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
+      <DependentUpon>MainAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BuscaPassagens.xaml.cs">
       <DependentUpon>BuscaPassagens.xaml</DependentUpon>
@@ -125,7 +125,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Admin.xaml">
+    <Page Include="Views\Administrador\MainAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +241,8 @@
   <ItemGroup>
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Usuario\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
