@@ -20,7 +20,7 @@ namespace ViewWPF.Views
     /// </summary>
     public partial class Pacotes : UserControl
     {
-        public Pacotes()//pacotes
+        public Pacotes()
         {
             InitializeComponent();
         }

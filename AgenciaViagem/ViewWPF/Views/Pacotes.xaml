@@ -5,36 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ViewWPF.Views"
              mc:Ignorable="d" 
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             Height="auto" Width="auto">
-    <Grid Height="320">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="79*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.RowSpan="2">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Height="300" Background="Yellow" Margin="10">
-                    <Grid.Effect>
-                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                    </Grid.Effect>
-
-                    <StackPanel Width="200">
-                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="pacote x" Foreground="DodgerBlue"/>
-                        <Image Source="/Assets/login.png" Width="200" Height="150" Stretch="UniformToFill" />
-                        <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Detalhes do pacote informando os dados da passagem, do destino e do Hotel definidos no Pacote."/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                            <Button Width="100" Content="Detalhes" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
-            </Grid>
-        </materialDesign:TransitioningContent>
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+            
     </Grid>
 </UserControl>
