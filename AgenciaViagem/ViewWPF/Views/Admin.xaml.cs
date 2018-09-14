@@ -26,6 +26,7 @@ namespace ViewWPF.Views
         public Admin()
         {
             InitializeComponent();
+            GridPrincipalAdm.Children.Add(new UsuarioList());
         }
         private void GridAdm_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,17 +46,20 @@ namespace ViewWPF.Views
             {
                 case 0:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new UserControlInicio());
+                    GridPrincipalAdm.Children.Add(new UsuarioList());
                     break;
                 case 1:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new Passagens ());
+                    GridPrincipalAdm.Children.Add(new HotelList());
                     break;
                 case 3:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new Pacotes());
+                    GridPrincipalAdm.Children.Add(new QuartoList());
                     break;
-
+                case 4:
+                    GridPrincipalAdm.Children.Clear();
+                    GridPrincipalAdm.Children.Add(new PacotesList());
+                    break;
                 default:
                     break;
             }
