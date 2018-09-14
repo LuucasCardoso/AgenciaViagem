@@ -18,11 +18,16 @@ namespace ViewWPF.Views
     /// <summary>
     /// Interação lógica para ListHoteis.xam
     /// </summary>
-    public partial class ListHoteis : Page
+    public partial class ListHoteis : UserControl
     {
         public ListHoteis()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GridInferior.Visibility = Visibility.Visible;
         }
     }
 }
