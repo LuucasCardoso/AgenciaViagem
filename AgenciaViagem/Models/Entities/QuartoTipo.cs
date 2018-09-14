@@ -11,12 +11,11 @@ namespace Models.Entities
     public class QuartoTipo 
     {
         public int QuartoTipoId { get; set; }
+        public string Nome { get; set; }
         public int QuantidadeQuartos { get; set; }
-        public enum OpcionaisQuarto {
-            CamaCasal,
-            Hidromassagem,
-            ServicoQuarto
-        }
+        public bool CamaCasal { get; set; }
+        public bool Hidromassagem { get; set; }
+        public bool ServicoQuarto { get; set; }
 
         //Propriedades Quartos
         public virtual ICollection<Quarto> _Quartos { get; set; }

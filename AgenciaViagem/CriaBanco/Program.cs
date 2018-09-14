@@ -14,10 +14,10 @@ namespace CriaBanco
         {
             Console.WriteLine("Populando Banco...");
             var db = new Contexto();
-            var lista = from u in db.Usuarios
+            var usuario = from u in db.Usuarios
                         where u.Nome == "Admin"
                         select u;
-            if (!lista.Any())
+            if (!usuario.Any())
             {
                 db.Usuarios.Add(new Usuario()
                 {
@@ -36,10 +36,10 @@ namespace CriaBanco
             {
                 Console.WriteLine("Entidade Administrativa já existe!");
             }
-            lista = from u in db.Usuarios
+            usuario = from u in db.Usuarios
                     where u.Nome == "Teste"
                     select u;
-            if (!lista.Any())
+            if (!usuario.Any())
             {
                 db.Usuarios.Add(new Usuario()
                 {
@@ -57,6 +57,63 @@ namespace CriaBanco
             else
             {
                 Console.WriteLine("Entidade Teste já existe!");
+            }
+            var QuartoTipo = from qt in db.QuartoTipos
+                                   where qt.Nome == "Básico"
+                                   select qt;
+            if (!QuartoTipo.Any())
+            {
+                db.QuartoTipos.Add(new QuartoTipo()
+                {
+                    Nome = "Básico",
+                    QuantidadeQuartos = 1,
+                    CamaCasal = false,
+                    Hidromassagem = false,
+                    ServicoQuarto = false
+                });
+                Console.WriteLine("Tipo de vaga 'Básico' criada!");
+            }
+            else
+            {
+                Console.WriteLine("Tipo de vaga 'Básico' já existe!");
+            }
+            QuartoTipo = from qt in db.QuartoTipos
+                             where qt.Nome == "Intermediário"
+                             select qt;
+            if (!QuartoTipo.Any())
+            {
+                db.QuartoTipos.Add(new QuartoTipo()
+                {
+                    Nome = "Intermediário",
+                    QuantidadeQuartos = 2,
+                    CamaCasal = true,
+                    Hidromassagem = false,
+                    ServicoQuarto = true
+                });
+                Console.WriteLine("Tipo de vaga 'Intermediário' criada!");
+            }
+            else
+            {
+                Console.WriteLine("Tipo de vaga 'Intermediário' já existe!");
+            }
+            QuartoTipo = from qt in db.QuartoTipos
+                             where qt.Nome == "Patrão"
+                             select qt;
+            if (!QuartoTipo.Any())
+            {
+                db.QuartoTipos.Add(new QuartoTipo()
+                {
+                    Nome = "Patrão",
+                    QuantidadeQuartos = 3,
+                    CamaCasal = true,
+                    Hidromassagem = true,
+                    ServicoQuarto = true
+                });
+                Console.WriteLine("Tipo de vaga 'Patrão' criada!");
+            }
+            else
+            {
+                Console.WriteLine("Tipo de vaga 'Patrão' já existe!");
             }
             db.SaveChanges();
             Console.WriteLine("Banco Populado!!");
