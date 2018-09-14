@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Pacotes.xam
+    /// Interaction logic for QuartoCadastro.xaml
     /// </summary>
-    public partial class Pacotes : UserControl
+    public partial class QuartoCadastro : UserControl
     {
-        public Pacotes()
+        public QuartoCadastro()
         {
             InitializeComponent();
         }
