@@ -80,6 +80,9 @@
     <Compile Include="Views\Hoteis.xaml.cs">
       <DependentUpon>Hoteis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ListHoteis.xaml.cs">
+      <DependentUpon>ListHoteis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListPassagens.xaml.cs">
       <DependentUpon>ListPassagens.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Hoteis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListHoteis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

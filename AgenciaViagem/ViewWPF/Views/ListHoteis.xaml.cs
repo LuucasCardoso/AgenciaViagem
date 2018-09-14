@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para Hoteis.xam
+    /// Interação lógica para ListHoteis.xam
     /// </summary>
-    public partial class Hoteis : UserControl
+    public partial class ListHoteis : Page
     {
-        public Hoteis()
+        public ListHoteis()
         {
             InitializeComponent();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
