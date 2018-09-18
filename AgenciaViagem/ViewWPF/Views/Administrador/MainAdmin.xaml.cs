@@ -46,7 +46,8 @@ namespace ViewWPF.Views.Administrador
                     break;
                 case 1:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new HotelList());
+                    GridPrincipalAdm.Children.Add(new EmpresaAereaCadastro());
+                    
                     break;
                 case 3:
                     GridPrincipalAdm.Children.Clear();
@@ -73,6 +74,12 @@ namespace ViewWPF.Views.Administrador
             this.Close();
             Login login = new Login();
             login.Show();
+        }
+
+        private void testeP_Selected(object sender, RoutedEventArgs e)
+        {
+            Page1 teste = new Page1();
+            teste.Show();
         }
     }
 }

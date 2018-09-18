@@ -31,7 +31,7 @@
         <Grid Margin="250 55 0 0">
 
             <Grid x:Name="GridPrincipalAdm" HorizontalAlignment="Center" VerticalAlignment="Top">
-
+                
             </Grid>
 
         </Grid>
@@ -49,7 +49,7 @@
                         <TextBlock Text="Usuarios" FontSize="20" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60">
+                <ListViewItem Name="testeP" Height="60" Selected="testeP_Selected">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="HospitalMarker" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Hoteis" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
