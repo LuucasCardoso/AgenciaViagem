@@ -75,11 +75,5 @@ namespace ViewWPF.Views.Administrador
             Login login = new Login();
             login.Show();
         }
-
-        private void testeP_Selected(object sender, RoutedEventArgs e)
-        {
-            Page1 teste = new Page1();
-            teste.Show();
-        }
     }
 }

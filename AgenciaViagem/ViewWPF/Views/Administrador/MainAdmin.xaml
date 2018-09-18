@@ -49,7 +49,7 @@
                         <TextBlock Text="Usuarios" FontSize="20" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Name="testeP" Height="60" Selected="testeP_Selected">
+                <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="HospitalMarker" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Hoteis" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
