@@ -22,13 +22,13 @@ namespace Models.Entities
             Executiva,
             Master
         }
+        public string CidadeOrigem { get; set; }
+        public string CidadeDestino { get; set; }
 
         //Propriedades Cidade
-        //[ForeignKey("_CidadeOrigem")]
-        public int CidadeId { get; set; }
-        public virtual Cidade _Cidade { get; set; }
+        //public int CidadeOrigemId { get; set; }
+        //public virtual Cidade _CidadeOrigem { get; set; }
 
-        //[ForeignKey("_CidadeDestino")]
         //public int CidadeDestinoId { get; set; }
         //public virtual Cidade _CidadeDestino { get; set; }
 
