@@ -271,7 +271,7 @@
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Usuario\" />
+    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Hotel3.jpg" />
