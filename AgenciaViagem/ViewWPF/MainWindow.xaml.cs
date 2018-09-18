@@ -61,6 +61,10 @@ namespace ViewWPF.Views
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Pacotes());
                     break;
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ListCarrinho());
+                    break;
                     
                 default:
                     break;

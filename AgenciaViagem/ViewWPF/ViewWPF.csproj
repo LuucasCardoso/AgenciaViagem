@@ -90,11 +90,8 @@
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Hoteis.xaml.cs">
-      <DependentUpon>Hoteis.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HotelList.xaml.cs">
-      <DependentUpon>HotelList.xaml</DependentUpon>
+    <Compile Include="Views\ListCarrinho.xaml.cs">
+      <DependentUpon>ListCarrinho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListHoteis.xaml.cs">
       <DependentUpon>ListHoteis.xaml</DependentUpon>
@@ -166,11 +163,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Hoteis.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HotelList.xaml">
+    <Page Include="Views\ListCarrinho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

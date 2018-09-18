@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ViewWPF.Views.ListCarrinho"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ViewWPF.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="auto" Width="auto">
+    <Grid x:Name="GridPrincipal" Width="608" Height="443">
+
+
+        <Grid x:Name="GridSuperior" Width="580" Height="65" Margin="18,6,10,371">
+            <Button Width="250" Height="50" Margin="0,5,330,10" Background="Green" Content="Comprar Mais"/>
+            <Button Width="250" Height="50" Margin="330,5,0,10" Background="Yellow" Content="Atualizar"/>
+
+        </Grid>
+
+        <Border BorderBrush="Black" BorderThickness="2">
+            <Grid x:Name="GridCompras" Width="580" Height="300" Background="FloralWhite">
+                <Grid.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                </Grid.Effect>
+
+                <Label x:Name="lblError" Content="" HorizontalAlignment="Center" Width="250" Height="30"/>
+
+            </Grid>
+        </Border>
+
+        <Grid x:Name="GridInferior" Width="580" Height="65" Margin="14,372,14,7">
+            <TextBox Width="300" Height="50" materialDesign:HintAssist.Hint="Número do Cartão"  Background="FloralWhite" Margin="0,5,280,10"></TextBox>
+            <Button Width="200" Height="50" Background="LightSeaGreen" Content="Finalizar Compra" Margin="380,5,0,10"></Button>
+        </Grid>
+
+    </Grid>
+</UserControl>
