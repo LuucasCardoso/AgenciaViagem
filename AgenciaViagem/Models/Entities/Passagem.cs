@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,12 @@ namespace Models.Entities
         }
 
         //Propriedades Cidade
-        [ForeignKey("_CidadeOrigem")]
         public int CidadeOrigemId { get; set; }
-        [ForeignKey("_CidadeDestino")]
-        public int CidadeDestinoId { get; set; }
+        //[Required]
+        //[ForeignKey("_CidadeDestino")]
+        //public int CidadeDestinoId { get; set; }
         public virtual Cidade _CidadeOrigem { get; set; }
-        public virtual Cidade _CidadeDestino { get; set; }
+        //public virtual Cidade _CidadeDestino { get; set; }
 
         //Propriedades Empresas Aéreas
         public int EmpresaAereaId { get; set; }
