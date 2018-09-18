@@ -24,11 +24,12 @@ namespace Models.Entities
         }
 
         //Propriedades Cidade
-        public int CidadeOrigemId { get; set; }
-        //[Required]
+        //[ForeignKey("_CidadeOrigem")]
+        public int CidadeId { get; set; }
+        public virtual Cidade _Cidade { get; set; }
+
         //[ForeignKey("_CidadeDestino")]
         //public int CidadeDestinoId { get; set; }
-        public virtual Cidade _CidadeOrigem { get; set; }
         //public virtual Cidade _CidadeDestino { get; set; }
 
         //Propriedades Empresas Aéreas

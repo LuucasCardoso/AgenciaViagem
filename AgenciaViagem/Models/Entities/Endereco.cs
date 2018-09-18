@@ -15,8 +15,8 @@ namespace Models.Entities
         public int Numero { get; set; }
 
         //Propriedades Cidade
-        public int CidadeId { get; set; }
-        public virtual Cidade _Cidade { get; set; }
+        //public int CidadeId { get; set; }
+        //public virtual Cidade _Cidade { get; set; }
 
         //Propriedades Hotéis
         public virtual ICollection<Hotel> Hoteis { get; set; }

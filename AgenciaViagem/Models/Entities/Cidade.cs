@@ -16,7 +16,7 @@ namespace Models.Entities
         public string Nome { get; set; }
 
         //Propriedades Enderecos
-        public virtual ICollection<Endereco> _Enderecos { get; set; }
+        //public virtual ICollection<Endereco> _Enderecos { get; set; }
 
         //Propriedades Estado
         public int EstadoId { get; set; }
