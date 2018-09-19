@@ -78,12 +78,6 @@
     <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
       <DependentUpon>MainAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\BuscaPassagens.xaml.cs">
       <DependentUpon>BuscaPassagens.xaml</DependentUpon>
     </Compile>
@@ -147,14 +141,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrador\MainAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Administrador\Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Administrador\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
