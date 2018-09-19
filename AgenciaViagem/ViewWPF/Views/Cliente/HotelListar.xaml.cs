@@ -1,4 +1,5 @@
-﻿using Models.Entities;
+﻿using Models.DAL;
+using Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace ViewWPF.Views.Cliente
         {
             InitializeComponent();
             DataContext = new List<Pais>();
+            Contexto db = new Contexto();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
