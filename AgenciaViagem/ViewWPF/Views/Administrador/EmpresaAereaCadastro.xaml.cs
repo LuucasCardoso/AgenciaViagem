@@ -23,16 +23,17 @@ namespace ViewWPF.Views.Administrador
     /// </summary>
     public partial class EmpresaAereaCadastro : UserControl
     {
+        readonly static EmpresaAereaController controller = new EmpresaAereaController();
         public EmpresaAereaCadastro()
         {
             InitializeComponent();
             DataContext = new EmpresaAereaViewModel();
+            EmpresaAereaViewModel lvm = DataContext as EmpresaAereaViewModel;
         }
 
         private void cadEmpresaAerea_Click(object sender, RoutedEventArgs e)
         {
             EmpresaAereaViewModel cvm = DataContext as EmpresaAereaViewModel;
-            EmpresaAereaController controller = new EmpresaAereaController();
             EmpresaAerea empresaAerea = new EmpresaAerea
             {
                 Nome = cvm.Nome,

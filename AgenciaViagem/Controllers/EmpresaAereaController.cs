@@ -16,5 +16,9 @@ namespace Controllers
         {
             dao.Create(empresaAerea);
         }
+        public ICollection<EmpresaAerea> ListarEmpresasAereas()
+        {
+            return dao.List();
+        }
     }
 }

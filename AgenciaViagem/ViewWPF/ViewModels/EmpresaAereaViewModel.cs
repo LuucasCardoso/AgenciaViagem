@@ -1,6 +1,7 @@
 ﻿using Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,18 @@ namespace ViewWPF.ViewModels
             if(PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private ObservableCollection<EmpresaAerea> empresasAereas;
+                
+        public ObservableCollection<EmpresaAerea> EmpresasAereas
+        {
+            get { return empresasAereas; }
+            set {
+                empresasAereas = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
         private int empresaAereaId;
 
