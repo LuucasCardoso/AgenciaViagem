@@ -28,7 +28,6 @@ namespace ViewWPF.Views.Administrador
         {
             InitializeComponent();
             DataContext = new EmpresaAereaViewModel();
-            EmpresaAereaViewModel lvm = DataContext as EmpresaAereaViewModel;
         }
 
         private void cadEmpresaAerea_Click(object sender, RoutedEventArgs e)

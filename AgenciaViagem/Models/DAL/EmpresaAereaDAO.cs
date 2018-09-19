@@ -16,17 +16,23 @@ namespace Models.DAL
             db.EmpresasAereas.Add(empresaAerea);
             db.SaveChanges();
         }
-        public EmpresaAerea Read(int id)
+        public EmpresaAerea FindById (EmpresaAerea empresaAerea)
         {
-            return new EmpresaAerea();
+            return db.EmpresasAereas.Find(empresaAerea.EmpresaAereaId);
         }
         public ICollection<EmpresaAerea> List()
         {
             return db.EmpresasAereas.ToList();
         }
-        public void Destroy()
+        public void Update(EmpresaAerea empresaAerea)
         {
-            //Desativa Usuario
+            db.Entry(empresaAerea).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void Delete(EmpresaAerea empresaAerea)
+        {
+            EmpresaAerea empresaAereaDB = FindById(empresaAerea);
+            db.EmpresasAereas.Remove(empresaAerea);
         }
     }
 }

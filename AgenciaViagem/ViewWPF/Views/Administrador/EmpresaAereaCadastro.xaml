@@ -19,22 +19,18 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Margin="209,165,277.8,-179.4">
             <Button x:Name="cadEmpresaAerea" Width="150" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="cadEmpresaAerea_Click"/>
         </StackPanel>
-        <Label Name="lblMensagem" Grid.ColumnSpan="2" Margin="0,225,-0.2,-225.4"></Label>
+        <Label Name="lblMensagem" Grid.ColumnSpan="2" Margin="-60,225,-0.2,-225.4" HorizontalAlignment="Center"></Label>
         <Grid Margin="0,272,-0.2,-271.6">
-            <ListView ItemsSource="{Binding EmpresasAereas}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Margin="0,2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="600" />
-                            </Grid.ColumnDefinitions>
+            <ListBox Margin="12,0,0,-0.4" Width="620" ItemsSource="{Binding EmpresasAereas}">
+                <ListBox.Resources>
+                    <DataTemplate x:Key="EmpresasAereas" >
+                        <Grid Height="auto" Width="auto">
                             <TextBlock Text="{Binding Nome}"/>
                             <TextBlock Text="{Binding Descricao}" Grid.Column="1"/>
                         </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </ListBox.Resources>
+            </ListBox>
         </Grid>
     </Grid>
 </UserControl>

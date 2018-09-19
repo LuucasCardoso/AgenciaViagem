@@ -1,4 +1,5 @@
-﻿using Models.Entities;
+﻿using Controllers;
+using Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,6 +13,7 @@ namespace ViewWPF.ViewModels
 {
     class EmpresaAereaViewModel : INotifyPropertyChanged
     {
+        readonly EmpresaAereaController controller = new EmpresaAereaController();
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
@@ -29,6 +31,11 @@ namespace ViewWPF.ViewModels
                 empresasAereas = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        public EmpresaAereaViewModel()
+        {
+            EmpresasAereas = controller.ListarEmpresasAereas();
         }
 
 
