@@ -3,10 +3,156 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ViewWPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             Height="auto" Width="auto">
+    <Grid Height="445" Width="608">
+        
+        <Grid Height="222" Width="608" Margin="0,0,0,222">
             
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+            <Grid Width="608" Height="222">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Background="Yellow" Margin="5,5,5,5">
+
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                    </Grid.Effect>
+
+                    <StackPanel Width="200.6">
+                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote Orlando" Foreground="DodgerBlue"/>
+                        <Image Source="/Assets/Orlando.jpeg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                        <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="7 dias em Orlando. Inclui: Passagens e Hotel"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                            <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="950"/></TextBlock>
+                            <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1" Background="Yellow" Margin="5,5,5,5">
+
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                    </Grid.Effect>
+
+                    <StackPanel Width="200.6">
+                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote Amsterdam" Foreground="DodgerBlue"/>
+                        <Image Source="/Assets/Amsterdam.jpg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                        <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="7 dias em Amsterdam. Inclui: Passagens e Hotel"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                            <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="1090"/></TextBlock>
+                            <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="2" Background="Yellow" Margin="5,5,5,5">
+
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                    </Grid.Effect>
+
+                    <StackPanel>
+                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote USA" Foreground="DodgerBlue"/>
+                        <Image Source="/Assets/USA.jpg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                        <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="10 dias nos USA. Inclui: Passagens e Hotel"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                            <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="2300"/></TextBlock>
+                            <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            
+        </materialDesign:TransitioningContent>
+        </Grid>
+        
+        <Grid Height="222" Width="608" Margin="0,222,0,0">
+
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+                <Grid Width="608" Height="222">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Background="Yellow" Margin="5,5,5,5">
+
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                        </Grid.Effect>
+
+                        <StackPanel Width="200.6">
+                            <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote China" Foreground="DodgerBlue"/>
+                            <Image Source="/Assets/China.jpg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                            <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="14 dias na China. Inclui: Passagens e Hotel"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                                <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="2500"/></TextBlock>
+                                <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Background="Yellow" Margin="5,5,5,5">
+
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                        </Grid.Effect>
+
+                        <StackPanel Width="200.6">
+                            <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote Italia" Foreground="DodgerBlue"/>
+                            <Image Source="/Assets/Italia.jpg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                            <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="10 dias na Italia. Inclui: Passagens e Hotel"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                                <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="1800"/></TextBlock>
+                                <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Column="2" Background="Yellow" Margin="5,5,5,5">
+
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                        </Grid.Effect>
+
+                        <StackPanel>
+                            <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Pacote França" Foreground="DodgerBlue"/>
+                            <Image Source="/Assets/Franca.jpg" Height="90" Stretch="UniformToFill" Margin="0,5,0,5" />
+                            <TextBlock FontSize="10" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="20 dias na França. Inclui: Passagens e Hotel"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="176">
+                                <TextBlock VerticalAlignment="Center" Margin="5" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="4500"/></TextBlock>
+                                <Button Width="90" Content="Comprar" FontFamily="Champagne &amp; Limousines"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+            </materialDesign:TransitioningContent>
+        </Grid>
     </Grid>
+    
 </UserControl>

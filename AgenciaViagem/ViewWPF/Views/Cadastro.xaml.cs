@@ -61,5 +61,12 @@ namespace ViewWPF.Views
             objLogin.lblError.SetCurrentValue(ForegroundProperty, Brushes.Green);
             objLogin.lblError.Content = "Usuario criado com Sucesso!";
         }
+
+        private void ButtonVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            Login objLogin = new Login();
+            this.Visibility = Visibility.Hidden;
+            objLogin.Show();
+        }
     }
 }

@@ -51,14 +51,6 @@ namespace ViewWPF.Views.Administrador
                     break;
                 case 2:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new QuartoList());
-                    break;
-                case 3:
-                    GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new PacotesList());
-                    break;
-                case 4:
-                    GridPrincipalAdm.Children.Clear();
                     GridPrincipalAdm.Children.Add(new EmpresaAereaCadastro());
                     break;
                 default:

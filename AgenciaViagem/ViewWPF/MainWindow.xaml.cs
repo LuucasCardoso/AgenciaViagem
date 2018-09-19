@@ -60,7 +60,7 @@ namespace ViewWPF.Views
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Pacotes());
+                    GridPrincipal.Children.Add(new PacotesList());
                     break;
                 case 4:
                     GridPrincipal.Children.Clear();

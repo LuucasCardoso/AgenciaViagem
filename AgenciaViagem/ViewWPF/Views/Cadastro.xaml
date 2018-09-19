@@ -9,11 +9,19 @@
         Title="Cadastro" Height="500" Width="350" WindowStyle="None" MouseDown="Grid_MouseDown">
     <Grid>
         <Grid Background="#FF0069C0" Margin="0,0,0,484"/>
+        
         <StackPanel Height="484" VerticalAlignment="Bottom">
             <Button x:Name="ButtonFechar" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Margin="307,0,10,0" Click="ButtonFechar_Click">
                 <materialDesign:PackIcon Kind="Power"/>
             </Button>
         </StackPanel>
+        
+        <StackPanel Height="484" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button x:Name="ButtonVoltar" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Margin="10,0,0,307" Width="24" Click="ButtonVoltar_Click">
+                <materialDesign:PackIcon Kind="KeyboardBackspace" Foreground="#FF0F0E0E"/>
+            </Button>
+        </StackPanel>
+        
         
         <Grid Width="280" Height="380" VerticalAlignment="Bottom" Margin="35,0,35,74">
             <TextBlock Text="Cadastro" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="102,10,104,0" Foreground="Gray" FontSize="18" Height="24" Width="74"/>

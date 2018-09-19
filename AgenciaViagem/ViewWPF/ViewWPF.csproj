@@ -100,9 +100,6 @@
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pacotes.xaml.cs">
-      <DependentUpon>Pacotes.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PacotesList.xaml.cs">
       <DependentUpon>PacotesList.xaml</DependentUpon>
     </Compile>
@@ -170,10 +167,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Pacotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,11 +250,24 @@
   <ItemGroup>
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\USA.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Hotel3.jpg" />
     <Resource Include="Assets\Hotel4.jpg" />
     <Resource Include="Assets\Hotel5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Amsterdam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Orlando.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\china.jpg" />
+    <Resource Include="Assets\Franca.jpg" />
+    <Resource Include="Assets\Italia.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
