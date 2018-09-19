@@ -61,6 +61,10 @@ namespace ViewWPF.Views.Administrador
                     GridPrincipalAdm.Children.Clear();
                     GridPrincipalAdm.Children.Add(new EmpresaAereaCadastro());
                     break;
+                case 5:
+                    GridPrincipalAdm.Children.Clear();
+                    GridPrincipalAdm.Children.Add(new HotelCadastro());
+                    break;
                 default:
                     break;
             }
