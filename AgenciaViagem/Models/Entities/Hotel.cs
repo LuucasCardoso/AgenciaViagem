@@ -22,6 +22,7 @@ namespace Models.Entities
         public virtual ICollection<Quarto> Quartos { get; set; }
 
         //Propriedades Cidade
+        [Required]
         public int CidadeId { get; set; }
         public virtual Cidade _Cidade { get; set; }
     }

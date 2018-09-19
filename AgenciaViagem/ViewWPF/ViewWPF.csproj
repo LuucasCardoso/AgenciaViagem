@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\EmpresaAereaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
     <Compile Include="Views\Administrador\EmpresaAereaCadastro.xaml.cs">
@@ -75,14 +76,11 @@
     <Compile Include="Views\Administrador\EmpresaAereaListar.xaml.cs">
       <DependentUpon>EmpresaAereaListar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\HotelCadastro.xaml.cs">
+      <DependentUpon>HotelCadastro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
       <DependentUpon>MainAdmin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BuscaPassagens.xaml.cs">
       <DependentUpon>BuscaPassagens.xaml</DependentUpon>
@@ -93,8 +91,8 @@
     <Compile Include="Views\ListCarrinho.xaml.cs">
       <DependentUpon>ListCarrinho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListHoteis.xaml.cs">
-      <DependentUpon>ListHoteis.xaml</DependentUpon>
+    <Compile Include="Views\Cliente\HotelListar.xaml.cs">
+      <DependentUpon>HotelListar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListPassagens.xaml.cs">
       <DependentUpon>ListPassagens.xaml</DependentUpon>
@@ -143,15 +141,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Administrador\HotelCadastro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Administrador\MainAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Administrador\Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Administrador\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ListHoteis.xaml">
+    <Page Include="Views\Cliente\HotelListar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,9 +257,7 @@
   <ItemGroup>
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Cliente\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\Hotel3.jpg" />
     <Resource Include="Assets\Hotel4.jpg" />

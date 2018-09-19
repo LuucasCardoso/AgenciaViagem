@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Models.DAL;
+using Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ViewWPF.Views
+namespace ViewWPF.Views.Cliente
 {
     /// <summary>
     /// Interação lógica para ListHoteis.xam
     /// </summary>
-    public partial class ListHoteis : UserControl
+    public partial class HotelListar : UserControl
     {
-        public ListHoteis()
+        public HotelListar()
         {
             InitializeComponent();
+            DataContext = new List<Pais>();
+            Contexto db = new Contexto();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,9 +35,5 @@ namespace ViewWPF.Views
             GridInferior.Visibility = Visibility.Visible;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
