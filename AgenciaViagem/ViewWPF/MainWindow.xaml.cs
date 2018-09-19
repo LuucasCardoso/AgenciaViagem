@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewWPF.Views.Cliente;
 
 namespace ViewWPF.Views
 {
@@ -55,11 +56,15 @@ namespace ViewWPF.Views
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new ListHoteis());
+                    GridPrincipal.Children.Add(new HotelListar());
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Pacotes());
+                    break;
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ListCarrinho());
                     break;
                     
                 default:

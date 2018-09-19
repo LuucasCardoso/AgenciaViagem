@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\EmpresaAereaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
     <Compile Include="Views\Administrador\EmpresaAereaCadastro.xaml.cs">
@@ -84,14 +85,11 @@
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Hoteis.xaml.cs">
-      <DependentUpon>Hoteis.xaml</DependentUpon>
+    <Compile Include="Views\ListCarrinho.xaml.cs">
+      <DependentUpon>ListCarrinho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HotelList.xaml.cs">
-      <DependentUpon>HotelList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ListHoteis.xaml.cs">
-      <DependentUpon>ListHoteis.xaml</DependentUpon>
+    <Compile Include="Views\Cliente\HotelListar.xaml.cs">
+      <DependentUpon>HotelListar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListPassagens.xaml.cs">
       <DependentUpon>ListPassagens.xaml</DependentUpon>
@@ -152,15 +150,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Hoteis.xaml">
+    <Page Include="Views\ListCarrinho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\HotelList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ListHoteis.xaml">
+    <Page Include="Views\Cliente\HotelListar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,9 +250,7 @@
   <ItemGroup>
     <Resource Include="Assets\latam.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Cliente\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\Hotel3.jpg" />
     <Resource Include="Assets\Hotel4.jpg" />

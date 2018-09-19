@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ViewWPF.Views
 {
     /// <summary>
-    /// Interação lógica para HotelList.xam
+    /// Interação lógica para ListCarrinho.xam
     /// </summary>
-    public partial class HotelList : UserControl
+    public partial class ListCarrinho : UserControl
     {
-        public HotelList()
+        public ListCarrinho()
         {
             InitializeComponent();
         }
