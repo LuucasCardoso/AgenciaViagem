@@ -24,5 +24,17 @@ namespace ViewWPF.Views
         {
             InitializeComponent();
         }
+
+        private void Atualizar_Click(object sender, RoutedEventArgs e)
+        {
+            GridCompras.Visibility = Visibility.Hidden;
+            GridListCompras.Visibility = Visibility.Visible;
+        }
+
+        private void ComprarMais_Click(object sender, RoutedEventArgs e)
+        {
+            GridPrincipal.Children.Clear();
+            GridPrincipal.Children.Add(new ListPassagens());
+        }
     }
 }
