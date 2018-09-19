@@ -20,6 +20,10 @@ namespace Models.DAL
         {
             return new EmpresaAerea();
         }
+        public ICollection<EmpresaAerea> List()
+        {
+            return db.EmpresasAereas.ToList();
+        }
         public void Destroy()
         {
             //Desativa Usuario

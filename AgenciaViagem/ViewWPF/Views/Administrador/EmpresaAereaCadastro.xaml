@@ -20,5 +20,21 @@
             <Button x:Name="cadEmpresaAerea" Width="150" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="cadEmpresaAerea_Click"/>
         </StackPanel>
         <Label Name="lblMensagem" Grid.ColumnSpan="2" Margin="0,225,-0.2,-225.4"></Label>
+        <Grid Margin="0,272,-0.2,-271.6">
+            <ListView ItemsSource="{Binding EmpresasAereas}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="600" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Nome}"/>
+                            <TextBlock Text="{Binding Descricao}" Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </UserControl>
