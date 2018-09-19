@@ -76,6 +76,9 @@
     <Compile Include="Views\Administrador\EmpresaAereaListar.xaml.cs">
       <DependentUpon>EmpresaAereaListar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\HotelCadastro.xaml.cs">
+      <DependentUpon>HotelCadastro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
       <DependentUpon>MainAdmin.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrador\EmpresaAereaListar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrador\HotelCadastro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
