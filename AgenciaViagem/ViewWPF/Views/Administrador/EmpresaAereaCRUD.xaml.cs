@@ -21,10 +21,10 @@ namespace ViewWPF.Views.Administrador
     /// <summary>
     /// Interaction logic for EmpresaAereaListar.xaml
     /// </summary>
-    public partial class EmpresaAereaListar : UserControl
+    public partial class EmpresaAereaCRUD : UserControl
     {
         readonly static EmpresaAereaController controller = new EmpresaAereaController();
-        public EmpresaAereaListar()
+        public EmpresaAereaCRUD()
         {
             InitializeComponent();
             DataContext = new EmpresaAereaViewModel();
