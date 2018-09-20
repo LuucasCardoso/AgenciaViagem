@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\EmpresaAereaDAO.cs" />
+    <Compile Include="DAL\HoteisDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Entities\EmpresaAerea.cs" />
     <Compile Include="Entities\Hotel.cs" />

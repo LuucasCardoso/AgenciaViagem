@@ -46,7 +46,7 @@ namespace ViewWPF.Views.Administrador
                     break;
                 case 1:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new HotelCadastro());
+                    GridPrincipalAdm.Children.Add(new HoteisListar());
                     
                     break;
                 case 2:
