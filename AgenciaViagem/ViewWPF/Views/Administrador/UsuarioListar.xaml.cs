@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +14,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewWPF.ViewModels;
 
-namespace ViewWPF.Views
+namespace ViewWPF.Views.Administrador
 {
     /// <summary>
-    /// Interação lógica para UsuarioList.xam
+    /// Interação lógica para UsuarioListar.xam
     /// </summary>
-    public partial class UsuarioList : UserControl
+    public partial class UsuarioListar : UserControl
     {
-        public UsuarioList()
+        
+        public UsuarioListar()
         {
             InitializeComponent();
+            DataContext = new UsuarioViewModel();
+
         }
     }
 }
