@@ -51,6 +51,7 @@
                 <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="CreateBack"/>
                 <Button x:Name="cadEmpresaAerea" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnCreate"/>
             </StackPanel>
+            <Label x:Name="lblMessageCad" Margin="0,248,0,-248.2" Foreground="#DDFF0000" HorizontalAlignment="Center"></Label>
         </Grid>
         <Grid x:Name="GridEditarEmpresaAerea" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60" Margin="0,0,40,-14">
