@@ -70,9 +70,6 @@
     <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\EmpresaAereaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
-    <Compile Include="Views\Administrador\EmpresaAereaCadastro.xaml.cs">
-      <DependentUpon>EmpresaAereaCadastro.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Administrador\EmpresaAereaListar.xaml.cs">
       <DependentUpon>EmpresaAereaListar.xaml</DependentUpon>
     </Compile>
@@ -130,10 +127,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Administrador\EmpresaAereaCadastro.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Administrador\EmpresaAereaListar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

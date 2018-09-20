@@ -7,21 +7,64 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              
              mc:Ignorable="d" 
-             Height="45.5" Width="auto">
-    <Grid>
-        <ListBox Name="EmpresasAereasList" Margin="12,0,0,-0.4" Width="620">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="600" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Nome}"/>
-                        <TextBlock Text="{Binding Descricao}" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+             Height="auto" Width="auto">
+    <Grid x:Name="GridPrincipalEmpresaAerea">
+        <Button x:Name="cadButton" Click="CallCreate" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="Plus" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" Height="13" Width="20"/>
+                Cadastrar
+            </TextBlock>
+        </Button>
+
+        <Grid x:Name="GridListarEmpresaAerea" Margin="0,45,0,-45.2">
+            <DataGrid x:Name="dgEmpresasAereas" CanUserAddRows="False" ItemsSource="{Binding EmpresasAereas}" CanUserResizeColumns="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Descrição" Width="360" IsReadOnly="True" Binding="{Binding Descricao}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <materialDesign:PackIcon MouseLeftButtonUp="CallUpdate" Kind="Pencil" Width="20" Height="20" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <materialDesign:PackIcon MouseLeftButtonUp="OnDelete" Kind="Delete" Width="20" Height="20" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid x:Name="GridCadastrarEmpresaAerea" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60" Margin="0,0,40,-14">
+                <TextBox x:Name="txtBoxCadNomeEmpresa" Text="{Binding Nome}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Nome da Empresa" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="100" Margin="0,60,40.8,-114.4">
+                <TextBox x:Name="txtBoxCadDescricaoEmpresa" Text="{Binding Descricao}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Descrição da Empresa" Width="590" Height="100" Margin="12,0,0,0" Background="FloralWhite" VerticalContentAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Margin="0,183,0,-194.2">
+                <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="CreateBack"/>
+                <Button x:Name="cadEmpresaAerea" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnCreate"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridEditarEmpresaAerea" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60" Margin="0,0,40,-14">
+                <TextBox x:Name="txtBoxEditNomeEmpresa" Text="{Binding Nome}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Nome da Empresa" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="100" Margin="0,60,40.8,-114.4">
+                <TextBox x:Name="txtBoxEditDescricaoEmpresa" Text="{Binding Descricao}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Descrição da Empresa" Width="590" Height="100" Margin="12,0,0,0" Background="FloralWhite" VerticalContentAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Width="auto" Margin="0,183,0,-194.2">
+                <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="EditBack"/>
+                <Button x:Name="editEmpresaAerea" Width="auto" Content="Editar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnUpdate"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

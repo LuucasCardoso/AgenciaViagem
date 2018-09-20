@@ -16,9 +16,17 @@ namespace Controllers
         {
             dao.Create(empresaAerea);
         }
-        public ICollection<EmpresaAerea> ListarEmpresasAereas()
+        public IList<EmpresaAerea> ListarEmpresasAereas()
         {
             return dao.List();
+        }
+        public void EditarEmpresaAerea(EmpresaAerea empresaAerea)
+        {
+            dao.Update(empresaAerea);
+        }
+        public void ExcluirEmpresaAerea(EmpresaAerea empresaAerea)
+        {
+            dao.Delete(empresaAerea);
         }
     }
 }

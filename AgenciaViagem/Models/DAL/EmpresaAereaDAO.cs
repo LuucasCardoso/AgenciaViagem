@@ -1,6 +1,7 @@
 ﻿using Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,30 +10,52 @@ namespace Models.DAL
 {
     public class EmpresaAereaDAO
     {
-        static readonly Contexto db = new Contexto();
 
         public void Create(EmpresaAerea empresaAerea)
         {
-            db.EmpresasAereas.Add(empresaAerea);
-            db.SaveChanges();
+            using (var db = new Contexto())
+            {
+                db.EmpresasAereas.Add(empresaAerea);
+                db.SaveChanges();
+            }
+            
         }
         public EmpresaAerea FindById (EmpresaAerea empresaAerea)
         {
-            return db.EmpresasAereas.Find(empresaAerea.EmpresaAereaId);
+            using (var db = new Contexto())
+            {
+                return db.EmpresasAereas.Find(empresaAerea.EmpresaAereaId);
+            }
         }
-        public ICollection<EmpresaAerea> List()
+        public IList<EmpresaAerea> List()
         {
-            return db.EmpresasAereas.ToList();
+            using (var db = new Contexto())
+            {
+                return db.EmpresasAereas.ToList();
+            }
         }
         public void Update(EmpresaAerea empresaAerea)
         {
-            db.Entry(empresaAerea).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
+            using (var db = new Contexto())
+            {
+                db.Entry(empresaAerea).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            
         }
         public void Delete(EmpresaAerea empresaAerea)
         {
-            EmpresaAerea empresaAereaDB = FindById(empresaAerea);
-            db.EmpresasAereas.Remove(empresaAerea);
+            using (var db = new Contexto())
+            {
+                EmpresaAerea empresaAereaDB = FindById(empresaAerea);
+
+                if (empresaAereaDB != null)
+                {
+                    db.EmpresasAereas.Attach(empresaAerea);
+                    db.EmpresasAereas.Remove(empresaAerea);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
