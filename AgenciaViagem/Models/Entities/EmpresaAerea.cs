@@ -14,7 +14,6 @@ namespace Models.Entities
         [Key]
         public int EmpresaAereaId { get; set; }
         [Required]
-        [StringLength(10, MinimumLength = 2)]
         public string Nome { get; set; }
         public string Descricao { get; set; }
 

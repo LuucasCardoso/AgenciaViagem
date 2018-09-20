@@ -37,6 +37,17 @@ namespace ViewWPF.Views.Administrador
                 Nome = cvm.Nome,
                 Descricao = cvm.Descricao
             };
+            try
+            {
+                if (empresaAerea.Nome.Length < 1)
+                {
+                    throw new Exception("Favor, preencher o campo nome!");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             controller.CadastrarEmpresaAerea(empresaAerea);
             dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
             GridCadastrarEmpresaAerea.Visibility = Visibility.Collapsed;
@@ -47,8 +58,7 @@ namespace ViewWPF.Views.Administrador
         }
         private void CallCreate(object sender, RoutedEventArgs e)
         {
-            txtBoxCadNomeEmpresa.Text = "";
-            txtBoxCadDescricaoEmpresa.Text = "";
+            DataContext = new EmpresaAereaViewModel();
             GridListarEmpresaAerea.Visibility = Visibility.Collapsed;
             cadButton.Visibility = Visibility.Collapsed;
             GridCadastrarEmpresaAerea.Visibility = Visibility.Visible;
