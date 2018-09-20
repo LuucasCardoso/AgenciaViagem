@@ -35,7 +35,7 @@ namespace ViewWPF.ViewModels
 
         public EmpresaAereaViewModel()
         {
-            EmpresasAereas = controller.ListarEmpresasAereas();
+            //EmpresasAereas = controller.ListarEmpresasAereas();
         }
 
 

@@ -23,6 +23,13 @@ namespace ViewWPF.Views
         public ListCarrinho()
         {
             InitializeComponent();
+
+            var compras = new[]{
+                 new {Compra = "Gol", Categoria = "Passagem", Preco = "R$ 550,00"},
+                 new {Compra = "Hotel ***", Categoria = "Hotel", Preco = "R$ 900,00"},
+            };
+
+            DataGridCompras.ItemsSource = compras;
         }
 
         private void Atualizar_Click(object sender, RoutedEventArgs e)
@@ -49,7 +56,7 @@ namespace ViewWPF.Views
                 SucessoCompra.Visibility = Visibility.Visible;
                 ErroCompra.Visibility = Visibility.Hidden;
             }
-
         }
+        
     }
 }

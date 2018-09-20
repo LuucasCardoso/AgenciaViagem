@@ -38,10 +38,13 @@
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}" Grid.ColumnSpan="2">
                 <Border BorderBrush="Black" BorderThickness="2" Background="FloralWhite">
 
-                    <ListView Width="580" Height="300">
-                        <ListViewItem Content="Passagem Gol"></ListViewItem>
-                        <ListViewItem Content="Hotel ***"></ListViewItem>
-                    </ListView>
+                    <DataGrid x:Name="DataGridCompras" Width="580" Height="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Compra}" Header="Compra"/>
+                            <DataGridTextColumn Binding="{Binding Categoria}" Header="Categoria"/>
+                            <DataGridTextColumn Binding="{Binding Preco}" Header="Preço"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
                 </Border>
             </materialDesign:TransitioningContent>

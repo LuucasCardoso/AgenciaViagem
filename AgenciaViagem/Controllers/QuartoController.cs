@@ -8,13 +8,5 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    public class QuartoController
-    {
-        static readonly QuartoDAO dao = new QuartoDAO();
-
-        public void CadastrarQuarto(Quarto quarto)
-        {
-            dao.Create(quarto);
-        }
-    }
+    
 }
