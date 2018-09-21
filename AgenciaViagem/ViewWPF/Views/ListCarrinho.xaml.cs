@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewWPF.ViewModels;
 
 namespace ViewWPF.Views
 {
@@ -20,16 +23,10 @@ namespace ViewWPF.Views
     /// </summary>
     public partial class ListCarrinho : UserControl
     {
+        readonly static ListCarrinhoController controller = new ListCarrinhoController();
         public ListCarrinho()
         {
             InitializeComponent();
-
-            var compras = new[]{
-                 new {Compra = "Gol", Categoria = "Passagem", Preco = "R$ 550,00"},
-                 new {Compra = "Hotel ***", Categoria = "Hotel", Preco = "R$ 900,00"},
-            };
-
-            DataGridCompras.ItemsSource = compras;
         }
 
         private void Atualizar_Click(object sender, RoutedEventArgs e)
@@ -57,6 +54,12 @@ namespace ViewWPF.Views
                 ErroCompra.Visibility = Visibility.Hidden;
             }
         }
-        
+        private void OnDelete(object sender, RoutedEventArgs e)
+        {
+            controller.ExcluirCarrinho((Carrinho)DataGridCompras.CurrentItem);
+            DataGridCompras.DataContext = new EmpresaAereaViewModel();
+            GridListCompras.Visibility = Visibility.Visible;
+        }
+
     }
 }
