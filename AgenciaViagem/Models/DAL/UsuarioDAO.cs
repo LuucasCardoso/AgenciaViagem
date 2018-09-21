@@ -10,23 +10,28 @@ namespace Models.DAL
 {
     public class UsuarioDAO
     {
-        static readonly Contexto db = new Contexto();
-
         public void Create(Usuario usuario)
         {
-            db.Usuarios.Add(usuario);
-            db.SaveChanges();
+            using (var db = new Contexto())
+            {
+                db.Usuarios.Add(usuario);
+                db.SaveChanges();
+            }
         }
         public Usuario ReadByUsername(string user)
         {
-            var usuariodb = from u in db.Usuarios
-                        where u.User == user
-                        select u;
-            return usuariodb.FirstOrDefault();
+            using (var db = new Contexto())
+            {
+                var usuariodb = from u in db.Usuarios
+                                where u.User == user
+                                select u;
+                return usuariodb.FirstOrDefault();
+            }
         }
         public IList<Usuario> List()
         {
-            using(var db = new Contexto()){
+            using (var db = new Contexto())
+            {
                 return db.Usuarios.ToList();
             }
         }

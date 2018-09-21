@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -31,41 +32,26 @@ namespace ViewWPF.Views.Administrador
             DataContext = new UsuarioViewModel();
 
         }
-        private void OnUpdate(object sender, RoutedEventArgs e)
+        public void OnUpdate(object sender, RoutedEventArgs e)
         {
-            List<Usuario> lista = new List<Usuario>();
-            foreach(var item in dgUsuarios.Items)
+            foreach (Usuario item in dgUsuarios.Items)
             {
-                lista.Add((Usuario)item);
+                controller.EditarUsuario(item);
+                lblMessage.Content = "Usuários Atualizados!";
             }
-            UsuarioViewModel uvm = DataContext as UsuarioViewModel;
-            foreach(var item in lista)
+            Timer timer = new Timer(3000);
+            timer.Elapsed += limpaLabel;
+            timer.AutoReset = false;
+            timer.Start();
+
+        }
+
+        private void limpaLabel(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
             {
-                uvm.UsuarioId = item.UsuarioId;
-                uvm.Nome = item.Nome;
-                uvm.User = item.User;
-                uvm.Telefone = item.Telefone;
-                uvm.Email = item.Email;
-                uvm.Cpf = item.Cpf;
-                uvm.Ativo = item.Ativo;
-                uvm.Administrador = item.Administrador;
-                uvm.Password = item.Password;
-                Usuario usuarioDB = new Usuario
-                {
-                    UsuarioId = uvm.UsuarioId,
-                    Nome = uvm.Nome,
-                    User = uvm.User,
-                    Telefone = uvm.Telefone,
-                    Email = uvm.Email,
-                    Cpf = uvm.Cpf,
-                    Password = uvm.Password,
-                    Administrador = uvm.Administrador,
-                    Ativo = uvm.Ativo
-                };
-                controller.EditarUsuario(usuarioDB);
-            DataContext = new UsuarioViewModel();
-            }
-            dgUsuarios.DataContext = new UsuarioViewModel();
+                lblMessage.Content = "";
+            });
         }
     }
 }
