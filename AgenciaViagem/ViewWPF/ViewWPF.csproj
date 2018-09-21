@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,14 +72,17 @@
     <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\EmpresaAereaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
-    <Compile Include="Views\Administrador\EmpresaAereaListar.xaml.cs">
-      <DependentUpon>EmpresaAereaListar.xaml</DependentUpon>
+    <Compile Include="Views\Administrador\EmpresaAereaCRUD.xaml.cs">
+      <DependentUpon>EmpresaAereaCRUD.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\HoteisListar.xaml.cs">
       <DependentUpon>HoteisListar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
       <DependentUpon>MainAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\UsuarioListar.xaml.cs">
+      <DependentUpon>UsuarioListar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
@@ -109,9 +114,6 @@
     <Compile Include="Views\UserControlInicio.xaml.cs">
       <DependentUpon>UserControlInicio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UsuarioList.xaml.cs">
-      <DependentUpon>UsuarioList.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,7 +126,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Administrador\EmpresaAereaListar.xaml">
+    <Page Include="Views\Administrador\EmpresaAereaCRUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Administrador\MainAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrador\UsuarioListar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,10 +179,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControlInicio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UsuarioList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

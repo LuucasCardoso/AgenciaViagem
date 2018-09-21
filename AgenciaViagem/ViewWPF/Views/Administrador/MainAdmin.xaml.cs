@@ -22,7 +22,7 @@ namespace ViewWPF.Views.Administrador
         public MainAdmin()
         {
             InitializeComponent();
-            GridPrincipalAdm.Children.Add(new UsuarioList());
+            GridPrincipalAdm.Children.Add(new UsuarioListar());
         }
         private void GridAdm_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -42,16 +42,15 @@ namespace ViewWPF.Views.Administrador
             {
                 case 0:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new UsuarioList());
+                    GridPrincipalAdm.Children.Add(new UsuarioListar());
                     break;
                 case 1:
                     GridPrincipalAdm.Children.Clear();
                     GridPrincipalAdm.Children.Add(new HoteisListar());
-                    
                     break;
                 case 2:
                     GridPrincipalAdm.Children.Clear();
-                    GridPrincipalAdm.Children.Add(new EmpresaAereaListar());
+                    GridPrincipalAdm.Children.Add(new EmpresaAereaCRUD());
                     break;
                 default:
                     break;

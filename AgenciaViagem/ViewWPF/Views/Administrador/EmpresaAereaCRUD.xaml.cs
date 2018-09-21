@@ -21,10 +21,10 @@ namespace ViewWPF.Views.Administrador
     /// <summary>
     /// Interaction logic for EmpresaAereaListar.xaml
     /// </summary>
-    public partial class EmpresaAereaListar : UserControl
+    public partial class EmpresaAereaCRUD : UserControl
     {
         readonly static EmpresaAereaController controller = new EmpresaAereaController();
-        public EmpresaAereaListar()
+        public EmpresaAereaCRUD()
         {
             InitializeComponent();
             DataContext = new EmpresaAereaViewModel();
@@ -39,22 +39,22 @@ namespace ViewWPF.Views.Administrador
             };
             try
             {
-                if (empresaAerea.Nome.Length < 1)
+                if (empresaAerea.Nome == null)
                 {
                     throw new Exception("Favor, preencher o campo nome!");
                 }
+                controller.CadastrarEmpresaAerea(empresaAerea);
+                dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
+                GridCadastrarEmpresaAerea.Visibility = Visibility.Collapsed;
+                GridListarEmpresaAerea.Visibility = Visibility.Visible;
+                cadButton.Visibility = Visibility.Visible;
+                txtBoxCadNomeEmpresa.Text = "";
+                txtBoxCadDescricaoEmpresa.Text = "";
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                lblMessageCad.Content = ex.Message;
             }
-            controller.CadastrarEmpresaAerea(empresaAerea);
-            dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
-            GridCadastrarEmpresaAerea.Visibility = Visibility.Collapsed;
-            GridListarEmpresaAerea.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
-            txtBoxCadNomeEmpresa.Text = "";
-            txtBoxCadDescricaoEmpresa.Text = "";
         }
         private void CallCreate(object sender, RoutedEventArgs e)
         {
@@ -65,13 +65,15 @@ namespace ViewWPF.Views.Administrador
         }
         private void CallUpdate(object sender, RoutedEventArgs e)
         {
-            EmpresaAerea empresaAerea = (EmpresaAerea)dgEmpresasAereas.CurrentItem;
-            DataContext = new EmpresaAereaViewModel{ EmpresaAereaId = empresaAerea.EmpresaAereaId };
+            EmpresaAerea ea = (EmpresaAerea)dgEmpresasAereas.CurrentItem;
+            EmpresaAereaViewModel evm = new EmpresaAereaViewModel();
+            evm.EmpresaAereaId = ea.EmpresaAereaId;
+            evm.Nome = ea.Nome;
+            evm.Descricao = ea.Descricao;
+            DataContext = evm;
             GridListarEmpresaAerea.Visibility = Visibility.Collapsed;
             cadButton.Visibility = Visibility.Collapsed;
             GridEditarEmpresaAerea.Visibility = Visibility.Visible;
-            txtBoxEditNomeEmpresa.Text = empresaAerea.Nome;
-            txtBoxEditDescricaoEmpresa.Text = empresaAerea.Descricao;
         }
 
         private void OnUpdate(object sender, RoutedEventArgs e)
