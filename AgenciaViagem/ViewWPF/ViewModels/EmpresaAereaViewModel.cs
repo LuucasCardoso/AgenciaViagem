@@ -14,12 +14,18 @@ namespace ViewWPF.ViewModels
     class EmpresaAereaViewModel : INotifyPropertyChanged
     {
         readonly EmpresaAereaController controller = new EmpresaAereaController();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             if(PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public EmpresaAereaViewModel()
+        {
+            EmpresasAereas = new ObservableCollection<EmpresaAerea>(controller.ListarEmpresasAereas());
         }
 
         private ObservableCollection<EmpresaAerea> empresasAereas;
@@ -32,12 +38,6 @@ namespace ViewWPF.ViewModels
                 NotifyPropertyChanged();
             }
         }
-
-        public EmpresaAereaViewModel()
-        {
-            EmpresasAereas = new ObservableCollection<EmpresaAerea>(controller.ListarEmpresasAereas());
-        }
-
 
         private int empresaAereaId;
 

@@ -24,12 +24,12 @@ namespace ViewWPF.Views
     /// </summary>
     public partial class Login : Window
     {
+        readonly static UsuarioController controller = new UsuarioController();
+
         public Login()
         {
             InitializeComponent();
-            //UsuarioViewModel vm = new UsuarioViewModel();
-            //vm.Email = "";
-            //DataContext = vm;
+            DataContext = new UsuarioViewModel();
             cadeado.Source = new BitmapImage(new Uri(@"/Assets/login.png", UriKind.Relative));
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -44,12 +44,13 @@ namespace ViewWPF.Views
 
         private void ButtonLogin1_Click(object sender, RoutedEventArgs e)
         {
+            UsuarioViewModel uvm = DataContext as UsuarioViewModel;
+            uvm.Password = campoPass.Password;
             lblError.Content = "";
             lblError.SetCurrentValue(ForegroundProperty, Brushes.Red);
-            UsuarioController controller = new UsuarioController();
-            if (controller.AutenticarUsuario(campoUser.Text, campoPass.Password))
+            if (controller.AutenticarUsuario(uvm.User, uvm.Password))
             {
-                Usuario user = controller.BuscarUsuarioPorNome(campoUser.Text);
+                Usuario user = controller.BuscarUsuarioPorNome(uvm.User);
                 if (user.Administrador)
                 {
                     MainAdmin admin = new MainAdmin();
