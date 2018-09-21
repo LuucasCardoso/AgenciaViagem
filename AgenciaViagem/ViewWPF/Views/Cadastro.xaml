@@ -36,7 +36,7 @@
 
             </StackPanel>
         </Grid>
-        <Button x:Name="ButtonCadastrar" CommandParameter="{Binding ElementName=passBox}"  VerticalAlignment="Bottom"  Width="150" Content="CADASTRAR" Height="44" Margin="100,0,100,20" Click="ButtonCadastrar_Click"/>
+        <Button x:Name="ButtonCadastrar"  VerticalAlignment="Bottom"  Width="150" Content="CADASTRAR" Height="44" Margin="100,0,100,20" Click="ButtonCadastrar_Click"/>
 
     </Grid>
 </Window>

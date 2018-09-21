@@ -32,7 +32,7 @@ namespace ViewWPF.Views.Administrador
             DataContext = new UsuarioViewModel();
 
         }
-        public void OnUpdate(object sender, RoutedEventArgs e)
+        private void OnUpdate(object sender, RoutedEventArgs e)
         {
             foreach (Usuario item in dgUsuarios.Items)
             {
@@ -40,18 +40,92 @@ namespace ViewWPF.Views.Administrador
                 lblMessage.Content = "Usuários Atualizados!";
             }
             Timer timer = new Timer(3000);
-            timer.Elapsed += limpaLabel;
+            timer.Elapsed += LimpaLabel;
             timer.AutoReset = false;
             timer.Start();
 
         }
 
-        private void limpaLabel(object sender, ElapsedEventArgs e)
+        private void LimpaLabel(object sender, ElapsedEventArgs e)
         {
             this.Dispatcher.Invoke(() =>
             {
                 lblMessage.Content = "";
             });
+        }
+        private void LimpaLabelCadastro(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                lblMessageCadastroUsuario.Content = "";
+            });
+        }
+        private void OnCreate(object sender, RoutedEventArgs e)
+        {
+            UsuarioViewModel cvm = DataContext as UsuarioViewModel;
+            cvm.Password = passBox.Password;
+            UsuarioController controller = new UsuarioController();
+            Usuario usuario = new Usuario
+            {
+                Nome = cvm.Nome,
+                Email = cvm.Email,
+                Password = cvm.Password,
+                User = cvm.User,
+                Cpf = cvm.Cpf,
+                Telefone = cvm.Telefone,
+                Administrador = cvm.Administrador,
+                Ativo = true
+            };
+            try
+            {
+                if (usuario.Nome == null || usuario.Nome.Length < 3)
+                {
+                    throw new Exception("Nome deve ter no mínimo 3 caracteres!");
+                }
+                if(usuario.User == null || usuario.User.Length < 4)
+                {
+                    throw new Exception("Usuário deve ter no mínimo 4 caracteres!");
+                }
+                if (usuario.Cpf == null || usuario.Cpf.Length != 11)
+                {
+                    throw new Exception("CPF deve ter 11 dígitos!");
+                }
+                if (usuario.Email == null || usuario.Email.Length < 4)
+                {
+                    throw new Exception("Email deve ter no mínimo 4 caracteres!");
+                }
+                if (usuario.Telefone == null || usuario.Telefone.Length < 12)
+                {
+                    throw new Exception("Telefone com código do país e regional!");
+                }
+                if(usuario.Password == null || usuario.Password.Length < 4)
+                {
+                    throw new Exception("Senha deve ter no mínimo 4 caracteres!");
+                }
+
+                controller.CadastrarUsuario(usuario);
+                GridCadastroUsuario.Visibility = Visibility.Collapsed;
+                GridListarEditarUsuario.Visibility = Visibility.Visible;
+                dgUsuarios.DataContext = new UsuarioViewModel();
+            }
+            catch (Exception ex)
+            {
+                lblMessageCadastroUsuario.Content = ex.Message;
+                Timer timer = new Timer(3000);
+                timer.Elapsed += LimpaLabelCadastro;
+                timer.AutoReset = false;
+                timer.Start();
+            }
+        }
+        private void CallCreate(object sender, RoutedEventArgs e)
+        {
+            GridListarEditarUsuario.Visibility = Visibility.Collapsed;
+            GridCadastroUsuario.Visibility = Visibility.Visible;
+        }
+        private void CreateBack(object sender, RoutedEventArgs e)
+        {
+            GridCadastroUsuario.Visibility = Visibility.Collapsed;
+            GridListarEditarUsuario.Visibility = Visibility.Visible;
         }
     }
 }

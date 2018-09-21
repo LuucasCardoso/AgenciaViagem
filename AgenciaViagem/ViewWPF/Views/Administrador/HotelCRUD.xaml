@@ -39,7 +39,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Grid x:Name="GridCadastrarHotel" Margin="0,22,-0.2,-21.2" >
+        <Grid x:Name="GridCadastrarHotel" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
             
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="310" Height="60" Margin="0,0,40,-14" HorizontalAlignment="Left">
                 <TextBox x:Name="txtBoxCadNomeHotel" Text="{Binding Nome}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Nome do Hotel" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
