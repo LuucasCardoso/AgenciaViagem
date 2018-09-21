@@ -1,6 +1,8 @@
-﻿using Models.Entities;
+﻿using Controllers;
+using Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,12 +13,32 @@ namespace ViewWPF.ViewModels
 {
     class UsuarioViewModel : INotifyPropertyChanged
     {
+        readonly UsuarioController controller = new UsuarioController();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            if(PropertyChanged != null)
+            if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public UsuarioViewModel()
+        {
+            Usuarios = new ObservableCollection<Usuario>(controller.ListarUsuarios());
+        }
+
+
+        private ObservableCollection<Usuario> usuarios;
+
+        public ObservableCollection<Usuario> Usuarios
+        {
+            get { return usuarios; }
+            set
+            {
+                usuarios = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private Usuario usuario;

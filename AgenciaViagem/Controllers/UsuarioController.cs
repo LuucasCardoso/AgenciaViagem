@@ -34,6 +34,16 @@ namespace Controllers
             dao.Create(usuario);
         }
 
+        public IList<Usuario> ListarUsuarios()
+        {
+            return dao.List();
+        }
+
+        public void EditarUsuario(Usuario usuario)
+        {
+            dao.Update(usuario);
+        }
+
         public Usuario BuscarUsuarioPorNome(string user)
         {
              return dao.ReadByUsername(user);
