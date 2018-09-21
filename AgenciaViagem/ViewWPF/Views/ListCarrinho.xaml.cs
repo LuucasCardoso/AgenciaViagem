@@ -61,5 +61,9 @@ namespace ViewWPF.Views
             GridListCompras.Visibility = Visibility.Visible;
         }
 
+        private void Canvas_TextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
     }
 }
