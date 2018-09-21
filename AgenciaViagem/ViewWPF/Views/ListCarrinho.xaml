@@ -15,9 +15,6 @@
                 <Button Width="250" Height="50" Margin="330,5,0,10" Background="Yellow" Content="Atualizar" Click="Atualizar_Click" Foreground="Black"/>
             </Grid>
         </materialDesign:TransitioningContent>
-        
-        
-
 
         <Grid x:Name="GridCompras" Width="580" Height="300">
             <Grid.Effect>
@@ -29,35 +26,46 @@
                 </Border>
             </materialDesign:TransitioningContent>
         </Grid>
-        
-        
-        <Grid x:Name="GridListCompras" Width="580" Height="300" Visibility="Hidden">
+
+
+        <Grid x:Name="GridListCompras" Width="580" Height="300" Visibility="Hidden" Margin="14,72,14,73">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
             </Grid.Effect>
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}" Grid.ColumnSpan="2">
                 <Border BorderBrush="Black" BorderThickness="2" Background="FloralWhite">
 
-                    <DataGrid x:Name="DataGridCompras" Width="580" Height="300">
+                    <DataGrid x:Name="DataGridCompras" Width="580" Height="300" ItemsSource="{Binding Carrinho}">
+                        <!--COLUNAS-->
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Compra}" Header="Compra"/>
-                            <DataGridTextColumn Binding="{Binding Categoria}" Header="Categoria"/>
-                            <DataGridTextColumn Binding="{Binding Preco}" Header="Preço"/>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Compra}" Header="Compra"/>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Categoria}" Header="Categoria"/>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Preco}" Header="Preço"/>
+
+                            <!-- DELETAR COMPRA -->
+                            <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <materialDesign:PackIcon MouseLeftButtonUp="OnDelete" Kind="Delete" Width="20" Height="20" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
                         </DataGrid.Columns>
                     </DataGrid>
 
                 </Border>
             </materialDesign:TransitioningContent>
         </Grid>
-        
 
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222" Margin="14,0,0,0">
             <Grid x:Name="GridInferior" Width="580" Height="65" Margin="14,372,14,7">
-                
+
                 <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão"  Background="FloralWhite" Margin="0,5,330,17" />
-                
+
                 <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="380,5,0,17" Click="Button_Click"></Button>
-                
+
                 <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="98" Height="30" Margin="433,47,49,-12" Foreground="Red" Visibility="Hidden"/>
                 <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="182" Height="30" Margin="388,47,10,-12" Foreground="Green" Visibility="Hidden"/>
             </Grid>

@@ -47,11 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CarrinhoDAO.cs" />
     <Compile Include="DAL\EmpresaAereaDAO.cs" />
     <Compile Include="DAL\HoteisDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
+    <Compile Include="Entities\Carrinho.cs" />
     <Compile Include="Entities\EmpresaAerea.cs" />
     <Compile Include="Entities\Hotel.cs" />
+    <Compile Include="Entities\ItemCompra.cs" />
     <Compile Include="Entities\Pacote.cs" />
     <Compile Include="Entities\Passagem.cs" />
     <Compile Include="Entities\Quarto.cs" />
