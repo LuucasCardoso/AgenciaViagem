@@ -21,10 +21,10 @@ namespace ViewWPF.Views.Administrador
     /// <summary>
     /// Interação lógica para HoteisListar.xam
     /// </summary>
-    public partial class HoteisListar : UserControl
+    public partial class HotelCRUD : UserControl
     {
         readonly static HoteisController controller = new HoteisController();
-        public HoteisListar()
+        public HotelCRUD()
         {
             InitializeComponent();
             DataContext = new HotelViewModel();
@@ -60,7 +60,7 @@ namespace ViewWPF.Views.Administrador
             DataContext = new HotelViewModel{ HotelId = hotel.HotelId };
             GridListarHoteis.Visibility = Visibility.Collapsed;
             cadButton.Visibility = Visibility.Collapsed;
-            GridEditarHoteis.Visibility = Visibility.Visible;
+            GridEditarHotel.Visibility = Visibility.Visible;
             txtBoxEditNomeHotel.Text = hotel.Nome;
             txtBoxEditDescricaoHotel.Text = hotel.Descricao;
         }
@@ -79,7 +79,7 @@ namespace ViewWPF.Views.Administrador
             };
             controller.EditarHotel(hotel);
             dgHoteis.DataContext = new HotelViewModel();
-            GridEditarHoteis.Visibility = Visibility.Collapsed;
+            GridEditarHotel.Visibility = Visibility.Collapsed;
             GridListarHoteis.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
         }
@@ -88,8 +88,8 @@ namespace ViewWPF.Views.Administrador
         {
             controller.ExcluirHoteis((Hotel)dgHoteis.CurrentItem);
             dgHoteis.DataContext = new HotelViewModel();
-            GridEditarHoteis.Visibility = Visibility.Collapsed;
-            GridListarHoteis.Visibility = Visibility.Visible;
+            GridEditarHotel.Visibility = Visibility.Collapsed;
+            GridEditarHotel.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
         }
 
@@ -102,8 +102,8 @@ namespace ViewWPF.Views.Administrador
 
         private void EditBack(object sender, RoutedEventArgs e)
         {
-            GridEditarHoteis.Visibility = Visibility.Collapsed;
-            GridListarHoteis.Visibility = Visibility.Visible;
+            GridEditarHotel.Visibility = Visibility.Collapsed;
+            GridEditarHotel.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
         }
 
