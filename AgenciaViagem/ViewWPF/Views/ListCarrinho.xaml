@@ -62,12 +62,16 @@
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222" Margin="14,0,0,0">
             <Grid x:Name="GridInferior" Width="580" Height="65" Margin="14,372,14,7">
 
-                <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão"  Background="FloralWhite" Margin="0,5,330,17" />
 
-                <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="380,5,0,17" Click="Button_Click"></Button>
+                <TextBox x:Name="Cartao" Width="125" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="196,5,260,17"/>
 
-                <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="98" Height="30" Margin="433,47,49,-12" Foreground="Red" Visibility="Hidden"/>
-                <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="182" Height="30" Margin="388,47,10,-12" Foreground="Green" Visibility="Hidden"/>
+                <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="350,4,30,18" Click="Button_Click"></Button>
+
+                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="98" Height="30" Margin="433,47,49,-12" Foreground="Red" Visibility="Hidden"/>
+                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="182" Height="30" Margin="388,47,10,-12" Foreground="Green" Visibility="Hidden"/>
+
+               
+
             </Grid>
         </materialDesign:TransitioningContent>
 

@@ -102,9 +102,6 @@
     <Compile Include="Views\PacotesList.xaml.cs">
       <DependentUpon>PacotesList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Passagens.xaml.cs">
-      <DependentUpon>Passagens.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\QuartoCadastro.xaml.cs">
       <DependentUpon>QuartoCadastro.xaml</DependentUpon>
     </Compile>
@@ -163,10 +160,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PacotesList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Passagens.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
