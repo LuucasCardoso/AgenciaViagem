@@ -9,50 +9,61 @@
              Height="auto" Width="auto">
 
     <Grid x:Name="GridPrincipalUsuario">
-        <Grid x:Name="GridListarEditarUsuario">
+        <Grid x:Name="GridListarUsuario">
             <StackPanel Orientation="Horizontal">
-                <Button Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="24,14,12,14" Height="Auto" Click="CallCreate" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Button Width="auto" Content="Salvar" FontFamily="Champagne &amp; Limousines" Margin="24,14,12,14" Height="Auto" Click="OnUpdate" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="cadButton" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="24,14,12,0" Height="25" Click="CallSave" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label x:Name="lblMessage" FontSize="16" Width="auto" Foreground="Green" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"></Label>
             </StackPanel>
             <Grid Margin="12,68,8.4,-48.2" VerticalAlignment="Top">
                 <DataGrid x:Name="dgUsuarios" CanUserAddRows="False" ItemsSource="{Binding Usuarios}" CanUserResizeColumns="False" AutoGenerateColumns="False" Margin="0,-10,0,9.8">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="E-mail" Width="auto" Binding="{Binding Email}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="CPF" Width="auto" IsReadOnly="True" Binding="{Binding Cpf}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Usuario" Width="auto" IsReadOnly="True" Binding="{Binding User}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Telefone" Width="auto" Binding="{Binding Telefone}"></DataGridTextColumn>
-                        <DataGridCheckBoxColumn Header="Admin" Binding="{Binding Administrador}"></DataGridCheckBoxColumn>
-                        <DataGridCheckBoxColumn Header="Ativo" Binding="{Binding Ativo}"></DataGridCheckBoxColumn>
-                        <DataGridTextColumn Visibility="Collapsed" IsReadOnly="True" Binding="{Binding Password}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="E-mail" IsReadOnly="True" Width="auto" Binding="{Binding Email}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="CPF" IsReadOnly="True" Width="auto" Binding="{Binding Cpf}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Usuario" IsReadOnly="True" Width="auto" Binding="{Binding User}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Telefone" IsReadOnly="True" Width="auto" Binding="{Binding Telefone}"></DataGridTextColumn>
+                        <DataGridCheckBoxColumn Header="Admin" IsReadOnly="True" Binding="{Binding Administrador}"></DataGridCheckBoxColumn>
+                        <DataGridCheckBoxColumn Header="Ativo" IsReadOnly="True" Binding="{Binding Ativo}"></DataGridCheckBoxColumn>
+                        <DataGridTemplateColumn Width="70" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="CallSave" Margin="-10,0,0,0" Background="Transparent" BorderThickness="0">
+                                        <materialDesign:PackIcon Kind="Pencil" Foreground="Blue" IsHitTestVisible="True" />
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </Grid>
-        <Grid x:Name="GridCadastroUsuario" Background="White" Visibility="Collapsed">
+        <Grid x:Name="GridCadastroEditUsuario" Background="White" Visibility="Collapsed">
             <StackPanel Orientation="Vertical">
-            <StackPanel Width="auto" Orientation="Horizontal">
-                <StackPanel Width="220" Margin="10,10,10,0" Height="auto">
-                    <TextBox Text="{Binding Nome}" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
-                    <TextBox Text="{Binding Cpf}" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
-                    <TextBox Text="{Binding Telefone}" materialDesign:HintAssist.Hint="TELEFONE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Right" Width="232" VerticalAlignment="Bottom">
-                    <TextBox Text="{Binding User}" materialDesign:HintAssist.Hint="USER" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
-                    <TextBox Text="{Binding Email}" materialDesign:HintAssist.Hint="E-MAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
-                    <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0,10"/>
-                </StackPanel>
-            </StackPanel>
-                    <TextBlock Margin="0,5,0,10">
-                    <CheckBox IsChecked="{Binding Administrador}" Margin="0,-5"/>
-                    ADMINISTRADOR
-                    </TextBlock>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,20">
-                        <Button Background="Gray" Click="CreateBack" Width="150" Margin="0,0,20,0">VOLTAR</Button>
-                        <Button x:Name="ButtonCadastrar" Width="150" Content="CADASTRAR" Click="OnCreate"/>
+                <StackPanel Width="auto" Orientation="Horizontal">
+                    <StackPanel Width="220" Margin="10,10,10,0" Height="auto">
+                        <TextBox Text="{Binding User}" materialDesign:HintAssist.Hint="USER" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                        <TextBox Text="{Binding Nome}" materialDesign:HintAssist.Hint="NOME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                        <TextBox Text="{Binding Telefone}" materialDesign:HintAssist.Hint="TELEFONE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
                     </StackPanel>
-                <Label x:Name="lblMessageCadastroUsuario" Foreground="Red" Margin="3,0,0,20" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                    <StackPanel HorizontalAlignment="Right" Width="232" VerticalAlignment="Bottom">
+                        <TextBox Text="{Binding Password}" materialDesign:HintAssist.Hint="PASSWORD" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                        <TextBox Text="{Binding Cpf}" materialDesign:HintAssist.Hint="CPF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                        <TextBox Text="{Binding Email}" materialDesign:HintAssist.Hint="E-MAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10"/>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Margin="0,5,0,10">
+                <CheckBox IsChecked="{Binding Administrador}" Margin="10,-5"/>
+                ADMINISTRADOR
+                </TextBlock>
+                <TextBlock Margin="0,5,0,15">
+                    <CheckBox IsChecked="{Binding Ativo}" Margin="10,-5"/>
+                    ATIVO
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,20">
+                    <Button Background="Gray" Click="SaveBack" Width="150" Margin="0,0,20,0">VOLTAR</Button>
+                    <Button x:Name="ButtonCadastrar" Width="150" Content="CADASTRAR" Click="OnSave"/>
+                </StackPanel>
+                <Label x:Name="lblMessageCadastroUsuario" Visibility="Collapsed" Foreground="Red" Margin="3,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </Grid>
     </Grid>

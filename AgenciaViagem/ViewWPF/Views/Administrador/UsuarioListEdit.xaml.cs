@@ -26,54 +26,27 @@ namespace ViewWPF.Views.Administrador
     {
         readonly static UsuarioController controller = new UsuarioController();
 
+
         public UsuarioListEdit()
         {
             InitializeComponent();
             DataContext = new UsuarioViewModel();
 
         }
-        private void OnUpdate(object sender, RoutedEventArgs e)
+        private void OnSave(object sender, RoutedEventArgs e)
         {
-            foreach (Usuario item in dgUsuarios.Items)
-            {
-                controller.EditarUsuario(item);
-                lblMessage.Content = "Usuários Atualizados!";
-            }
             Timer timer = new Timer(3000);
-            timer.Elapsed += LimpaLabel;
-            timer.AutoReset = false;
-            timer.Start();
-
-        }
-
-        private void LimpaLabel(object sender, ElapsedEventArgs e)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                lblMessage.Content = "";
-            });
-        }
-        private void LimpaLabelCadastro(object sender, ElapsedEventArgs e)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                lblMessageCadastroUsuario.Content = "";
-            });
-        }
-        private void OnCreate(object sender, RoutedEventArgs e)
-        {
-            UsuarioViewModel cvm = DataContext as UsuarioViewModel;
-            cvm.Password = passBox.Password;
-            UsuarioController controller = new UsuarioController();
+            UsuarioViewModel uvm = DataContext as UsuarioViewModel;
             Usuario usuario = new Usuario
             {
-                Nome = cvm.Nome,
-                Email = cvm.Email,
-                Password = cvm.Password,
-                User = cvm.User,
-                Cpf = cvm.Cpf,
-                Telefone = cvm.Telefone,
-                Administrador = cvm.Administrador,
+                UsuarioId = uvm.UsuarioId,
+                Nome = uvm.Nome,
+                Email = uvm.Email,
+                Password = uvm.Password,
+                User = uvm.User,
+                Cpf = uvm.Cpf,
+                Telefone = uvm.Telefone,
+                Administrador = uvm.Administrador,
                 Ativo = true
             };
             try
@@ -82,7 +55,7 @@ namespace ViewWPF.Views.Administrador
                 {
                     throw new Exception("Nome deve ter no mínimo 3 caracteres!");
                 }
-                if(usuario.User == null || usuario.User.Length < 4)
+                if (usuario.User == null || usuario.User.Length < 4)
                 {
                     throw new Exception("Usuário deve ter no mínimo 4 caracteres!");
                 }
@@ -98,34 +71,74 @@ namespace ViewWPF.Views.Administrador
                 {
                     throw new Exception("Telefone com código do país e regional!");
                 }
-                if(usuario.Password == null || usuario.Password.Length < 4)
+                if (usuario.Password == null || usuario.Password.Length < 4)
                 {
                     throw new Exception("Senha deve ter no mínimo 4 caracteres!");
                 }
-
-                controller.CadastrarUsuario(usuario);
-                GridCadastroUsuario.Visibility = Visibility.Collapsed;
-                GridListarEditarUsuario.Visibility = Visibility.Visible;
+                if (usuario.UsuarioId == 0)
+                {
+                    controller.CadastrarUsuario(usuario);
+                    lblMessage.Content = "Usuário Criado!";
+                }
+                else
+                {
+                    controller.EditarUsuario(usuario);
+                    lblMessage.Content = "Usuário Atualizado!";
+                }
+                timer.Elapsed += LimpaLabel;
+                timer.AutoReset = false;
+                timer.Start();
                 dgUsuarios.DataContext = new UsuarioViewModel();
+                GridCadastroEditUsuario.Visibility = Visibility.Collapsed;
+                GridListarUsuario.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
                 lblMessageCadastroUsuario.Content = ex.Message;
-                Timer timer = new Timer(3000);
-                timer.Elapsed += LimpaLabelCadastro;
-                timer.AutoReset = false;
-                timer.Start();
+                lblMessageCadastroUsuario.Visibility = Visibility.Visible;
             }
         }
-        private void CallCreate(object sender, RoutedEventArgs e)
+    
+        private void LimpaLabel(object sender, ElapsedEventArgs e)
         {
-            GridListarEditarUsuario.Visibility = Visibility.Collapsed;
-            GridCadastroUsuario.Visibility = Visibility.Visible;
+            this.Dispatcher.Invoke(() =>
+            {
+                lblMessage.Content = "";
+                lblMessageCadastroUsuario.Content = "";
+            });
         }
-        private void CreateBack(object sender, RoutedEventArgs e)
+
+        private void CallSave(object sender, RoutedEventArgs e)
         {
-            GridCadastroUsuario.Visibility = Visibility.Collapsed;
-            GridListarEditarUsuario.Visibility = Visibility.Visible;
+            lblMessageCadastroUsuario.Visibility = Visibility.Collapsed;
+            Button button = (Button)sender;
+            if (button.Name == "cadButton")
+            {
+                DataContext = new UsuarioViewModel();
+            }
+            else
+            {
+                Usuario u = (Usuario)dgUsuarios.CurrentItem;
+                DataContext = new UsuarioViewModel
+                {
+                    UsuarioId = u.UsuarioId,
+                    Nome = u.Nome,
+                    Email = u.Email,
+                    Password = u.Password,
+                    User = u.User,
+                    Cpf = u.Cpf,
+                    Telefone = u.Telefone,
+                    Administrador = u.Administrador,
+                    Ativo = u.Ativo
+                };
+            }
+            GridListarUsuario.Visibility = Visibility.Collapsed;
+            GridCadastroEditUsuario.Visibility = Visibility.Visible;
+        }
+        private void SaveBack(object sender, RoutedEventArgs e)
+        {
+            GridCadastroEditUsuario.Visibility = Visibility.Collapsed;
+            GridListarUsuario.Visibility = Visibility.Visible;
         }
     }
 }

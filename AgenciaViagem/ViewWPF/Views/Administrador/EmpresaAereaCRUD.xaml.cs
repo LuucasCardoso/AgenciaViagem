@@ -29,58 +29,8 @@ namespace ViewWPF.Views.Administrador
             InitializeComponent();
             DataContext = new EmpresaAereaViewModel();
         }
-        private void OnCreate(object sender, RoutedEventArgs e)
+        private void OnSave(object sender, RoutedEventArgs e)
         {
-            EmpresaAereaViewModel cvm = DataContext as EmpresaAereaViewModel;
-            EmpresaAerea empresaAerea = new EmpresaAerea
-            {
-                Nome = cvm.Nome,
-                Descricao = cvm.Descricao
-            };
-            try
-            {
-                if (empresaAerea.Nome == null)
-                {
-                    throw new Exception("Favor, preencher o campo nome!");
-                }
-                controller.CadastrarEmpresaAerea(empresaAerea);
-                dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
-                GridCadastrarEmpresaAerea.Visibility = Visibility.Collapsed;
-                GridListarEmpresaAerea.Visibility = Visibility.Visible;
-                cadButton.Visibility = Visibility.Visible;
-                txtBoxCadNomeEmpresa.Text = "";
-                txtBoxCadDescricaoEmpresa.Text = "";
-            }
-            catch(Exception ex)
-            {
-                lblMessageCad.Content = ex.Message;
-            }
-        }
-        private void CallCreate(object sender, RoutedEventArgs e)
-        {
-            DataContext = new EmpresaAereaViewModel();
-            GridListarEmpresaAerea.Visibility = Visibility.Collapsed;
-            cadButton.Visibility = Visibility.Collapsed;
-            GridCadastrarEmpresaAerea.Visibility = Visibility.Visible;
-        }
-        private void CallUpdate(object sender, RoutedEventArgs e)
-        {
-            EmpresaAerea ea = (EmpresaAerea)dgEmpresasAereas.CurrentItem;
-            EmpresaAereaViewModel evm = new EmpresaAereaViewModel();
-            evm.EmpresaAereaId = ea.EmpresaAereaId;
-            evm.Nome = ea.Nome;
-            evm.Descricao = ea.Descricao;
-            DataContext = evm;
-            GridListarEmpresaAerea.Visibility = Visibility.Collapsed;
-            cadButton.Visibility = Visibility.Collapsed;
-            GridEditarEmpresaAerea.Visibility = Visibility.Visible;
-        }
-
-        private void OnUpdate(object sender, RoutedEventArgs e)
-        {
-            txtBoxEditDescricaoEmpresa.Focus();
-            txtBoxEditNomeEmpresa.Focus();
-            txtBoxEditDescricaoEmpresa.Focus();
             EmpresaAereaViewModel evm = DataContext as EmpresaAereaViewModel;
             EmpresaAerea empresaAerea = new EmpresaAerea
             {
@@ -88,32 +38,63 @@ namespace ViewWPF.Views.Administrador
                 Nome = evm.Nome,
                 Descricao = evm.Descricao
             };
-            controller.EditarEmpresaAerea(empresaAerea);
-            dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
-            GridEditarEmpresaAerea.Visibility = Visibility.Collapsed;
-            GridListarEmpresaAerea.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
+            try
+            {
+                if (empresaAerea.Nome == null)
+                {
+                    throw new Exception("Favor, preencher o campo nome!");
+                }
+                if (empresaAerea.EmpresaAereaId == 0)
+                {
+                    controller.CadastrarEmpresaAerea(empresaAerea);
+                }
+                else
+                {
+                    controller.EditarEmpresaAerea(empresaAerea);
+                }
+                dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
+                GridCadastrarEditarEmpresaAerea.Visibility = Visibility.Collapsed;
+                GridListarEmpresaAerea.Visibility = Visibility.Visible;
+                cadButton.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                lblMessageForm.Content = ex.Message;
+            }
+        }
+        private void CallSave(object sender, RoutedEventArgs e)
+        {
+            lblMessageForm.Content = "";
+            Button button = (Button)sender;
+            if (button.Name == "cadButton")
+            {
+                DataContext = new EmpresaAereaViewModel();
+
+            }
+            else
+            {
+                EmpresaAerea ea = (EmpresaAerea)dgEmpresasAereas.CurrentItem;
+                DataContext = new EmpresaAereaViewModel
+                {
+                    EmpresaAereaId = ea.EmpresaAereaId,
+                    Nome = ea.Nome,
+                    Descricao = ea.Descricao
+                };
+            }
+            GridListarEmpresaAerea.Visibility = Visibility.Collapsed;
+            cadButton.Visibility = Visibility.Collapsed;
+            GridCadastrarEditarEmpresaAerea.Visibility = Visibility.Visible;
         }
 
         private void OnDelete(object sender, RoutedEventArgs e)
         {
             controller.ExcluirEmpresaAerea((EmpresaAerea)dgEmpresasAereas.CurrentItem);
             dgEmpresasAereas.DataContext = new EmpresaAereaViewModel();
-            GridEditarEmpresaAerea.Visibility = Visibility.Collapsed;
-            GridListarEmpresaAerea.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
         }
 
-        private void CreateBack(object sender, RoutedEventArgs e)
+        private void SaveBack(object sender, RoutedEventArgs e)
         {
-            GridCadastrarEmpresaAerea.Visibility = Visibility.Collapsed;
-            GridListarEmpresaAerea.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
-        }
-
-        private void EditBack(object sender, RoutedEventArgs e)
-        {
-            GridEditarEmpresaAerea.Visibility = Visibility.Collapsed;
+            GridCadastrarEditarEmpresaAerea.Visibility = Visibility.Collapsed;
             GridListarEmpresaAerea.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
         }
