@@ -22,12 +22,12 @@ namespace ViewWPF.Views.Administrador
     /// <summary>
     /// Interação lógica para UsuarioListar.xam
     /// </summary>
-    public partial class UsuarioListEdit : UserControl
+    public partial class UsuarioCRUD : UserControl
     {
         readonly static UsuarioController controller = new UsuarioController();
 
 
-        public UsuarioListEdit()
+        public UsuarioCRUD()
         {
             InitializeComponent();
             DataContext = new UsuarioViewModel();

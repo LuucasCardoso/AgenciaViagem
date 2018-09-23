@@ -81,8 +81,8 @@
     <Compile Include="Views\Administrador\MainAdmin.xaml.cs">
       <DependentUpon>MainAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\UsuarioListEdit.xaml.cs">
-      <DependentUpon>UsuarioListEdit.xaml</DependentUpon>
+    <Compile Include="Views\Administrador\UsuarioCRUD.xaml.cs">
+      <DependentUpon>UsuarioCRUD.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
@@ -135,7 +135,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Administrador\UsuarioListEdit.xaml">
+    <Page Include="Views\Administrador\UsuarioCRUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
