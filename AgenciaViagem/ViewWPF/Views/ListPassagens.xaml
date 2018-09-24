@@ -8,21 +8,21 @@
              mc:Ignorable="d" 
              Height="auto" Width="auto">
 
-    <Grid x:Name="GridPrincipal" Width="608" Height="443">
+    <Grid x:Name="GridPrincipal" Width="608" Height="445">
 
-        <Grid x:Name="GridSuperior" Margin="0,-65,-10, -30">
+        <Grid x:Name="GridSuperior" Width="608" Height="120" VerticalAlignment="Top">
             <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="80" Margin="0,10,0,380">
-                    <ComboBox ItemsSource="{Binding Paises}" SelectedValuePath="PaisId" SelectedValue="{Binding PaisId, Mode=TwoWay}" DisplayMemberPath="Nome" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Pais de Embarque" Width="185" Height="26" Margin="12,0,0,20" Background="FloralWhite"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Linha Aérea" Width="185" Height="26" Margin="12,0,0,17" Background="FloralWhite"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Classe" Width="185" Height="26" Margin="12,0,0,17" Background="FloralWhite"/>
+                
+                <StackPanel Width="608" Height="120" VerticalAlignment="Top">
 
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País de Desembarque" Width="185" Height="26" Margin="-972,0,0,-45" Background="FloralWhite"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Data de Volta" Width="185" Height="26" Margin="-579,17,0, -30" Background="FloralWhite"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Data de Ida" Width="185" Height="26" Margin="-185,0,0,-45" Background="FloralWhite"/>
+                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Pais Embarque" Height="26" Background="FloralWhite" Margin="10,10,382,0"/>
+                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Pais Desembarque" Height="26" Background="FloralWhite" Margin="10,10,382,10"/>
+                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Linha Aerea"  Height="26"  Background="FloralWhite" Margin="10,0,382,10"/>
+                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="231,-160,217,0"/>
+                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="231,-80,217,0"/>
 
-                    <Button Width="580" Content="Buscar Passagens Disponíveis" FontFamily="Champagne &amp; Limousines" Margin="-580, 14, 0, -100" Click="Button_Click"/>
-
+                    <Button VerticalAlignment="Bottom" Content="Buscar Passagens" FontFamily="Champagne &amp; Limousines"  Click="Button_Click" Height="54" Margin="404,-150,10,33"/>
+             
                 </StackPanel>
 
             </materialDesign:TransitioningContent>
@@ -50,7 +50,7 @@
                                 <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Gol"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                     <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10" Click="Button_Click_1"/>
+                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

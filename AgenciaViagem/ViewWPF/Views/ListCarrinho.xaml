@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              Height="auto" Width="auto">
     <Grid x:Name="GridPrincipal" Width="608" Height="445">
-
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+            
             <Grid x:Name="GridSuperior" Width="580" Height="65" Margin="18,6,10,371">
                 <Button Width="250" Height="50" Margin="0,5,330,10" Background="LightGreen" Content="Comprar Mais" Foreground="Black" Click="ComprarMais_Click"/>
                 <Button Width="250" Height="50" Margin="330,5,0,10" Background="Yellow" Content="Atualizar" Click="Atualizar_Click" Foreground="Black"/>
@@ -63,9 +63,9 @@
             <Grid x:Name="GridInferior" Width="580" Height="65" Margin="14,372,14,7">
 
 
-                <TextBox x:Name="Cartao" Width="125" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="196,5,260,17"/>
+                <TextBox x:Name="Cartao" Width="125" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="10,20,259,17"/>
 
-                <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="350,4,30,18" Click="Button_Click"></Button>
+                <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="350,10,30,18" Click="Button_Click"></Button>
 
                     <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="98" Height="30" Margin="433,47,49,-12" Foreground="Red" Visibility="Hidden"/>
                     <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="182" Height="30" Margin="388,47,10,-12" Foreground="Green" Visibility="Hidden"/>
