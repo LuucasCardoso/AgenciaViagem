@@ -9,44 +9,46 @@
              Height="auto" Width="auto">
 
     <Grid x:Name="GridPrincipalHoteis">
-        <Button x:Name="cadButton" Click="CallCreate" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left">
-            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">
-                <materialDesign:PackIcon Kind="Plus" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" Height="13" Width="20"/>
-                Cadastrar
-            </TextBlock>
-        </Button>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="cadButton" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="24,14,12,0" Height="25" Click="CallSave" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="lblMessage" FontSize="16" Width="auto" Foreground="Green" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"></Label>
+        </StackPanel>
 
         <Grid x:Name="GridListarHoteis" Margin="0,45,0,-45.2">
-            <DataGrid x:Name="dgHoteis" CanUserAddRows="False" ItemsSource="{Binding Hotel}" CanUserResizeColumns="True" AutoGenerateColumns="False">
+            <DataGrid x:Name="dgHoteis" CanUserAddRows="False" ItemsSource="{Binding Hoteis}" CanUserResizeColumns="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Descrição" Width="100" IsReadOnly="True" Binding="{Binding Descricao}"></DataGridTextColumn>
-                    <DataGridComboBoxColumn Header="Cidade" ItemsSource="{Binding _Cidade.Id}"></DataGridComboBoxColumn>
+                    <DataGridTextColumn Header="Descrição" Width="200" IsReadOnly="True" Binding="{Binding Descricao}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Cidade" Binding="{Binding CidadeId}"></DataGridTextColumn>
                     <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <materialDesign:PackIcon MouseLeftButtonUp="CallUpdate" Kind="Pencil" Width="20" Height="20" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+                                <Button Click="CallSave" Background="Transparent" BorderThickness="0">
+                                    <materialDesign:PackIcon Kind="Pencil" Foreground="Blue" IsHitTestVisible="True" />
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <materialDesign:PackIcon MouseLeftButtonUp="OnDelete" Kind="Delete" Width="20" Height="20" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+                                <Button Click="OnDelete" Background="Transparent" BorderThickness="0">
+                                    <materialDesign:PackIcon Kind="Delete" Foreground="Red" IsHitTestVisible="True" />
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Grid x:Name="GridCadastrarHotel" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
-            
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="310" Height="60" Margin="0,0,40,-14" HorizontalAlignment="Left">
+        <Grid x:Name="GridCadastrarEditarHotel" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="290" Height="60" Margin="0,0,40,-14" HorizontalAlignment="Left">
                 <TextBox x:Name="txtBoxCadNomeHotel" Text="{Binding Nome}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Nome do Hotel" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="310" Height="60" Margin="0,0,40,-14" HorizontalAlignment="Right">
-                <ComboBox x:Name="cmbBoxCadCidadeHotel" Text="{Binding CidadeId}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Cidade do Hotel" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="290" Height="60" Margin="0,0,60,-14" HorizontalAlignment="Right">
+                <ComboBox x:Name="cmbBoxCadCidadeHotel" ItemsSource="{Binding Cidades}" SelectedValuePath="CidadeId" SelectedValue="{Binding CidadeId, Mode=TwoWay}" DisplayMemberPath="Nome" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Cidade do Hotel" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="100" Margin="0,60,40.8,-114.4">
@@ -54,23 +56,10 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Margin="0,183,0,-194.2">
-                <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="CreateBack"/>
-                <Button x:Name="cadHotel" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnCreate"/>
+                <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="SaveBack"/>
+                <Button x:Name="cadHotel" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnSave"/>
             </StackPanel>
-        </Grid>
-        <Grid x:Name="GridEditarHotel" Margin="0,22,-0.2,-21.2" Visibility="Collapsed">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="60" Margin="0,0,40,-14">
-                <TextBox x:Name="txtBoxEditNomeHotel" Text="{Binding Nome}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Nome do Hotel" Width="590" Height="26" Margin="12,0,0,0" Background="FloralWhite"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="620" Height="100" Margin="0,60,40.8,-114.4">
-                <TextBox x:Name="txtBoxEditDescricaoHotel" Text="{Binding Descricao}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Descrição do Hotel" Width="590" Height="100" Margin="12,0,0,0" Background="FloralWhite" VerticalContentAlignment="Top"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Width="auto" Margin="0,183,0,-194.2">
-                <Button Background="Gray" Width="auto" Content="Voltar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="EditBack"/>
-                <Button x:Name="editHotel" Width="auto" Content="Editar" FontFamily="Champagne &amp; Limousines" Margin="12,14" Height="Auto" Click="OnUpdate"/>
-            </StackPanel>
+            <Label x:Name="lblMessageForm" Margin="0,248,0,-248.2" Foreground="#DDFF0000" HorizontalAlignment="Center"></Label>
         </Grid>
     </Grid>
 </UserControl>

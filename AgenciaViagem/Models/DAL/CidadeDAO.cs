@@ -8,50 +8,57 @@ using System.Threading.Tasks;
 
 namespace Models.DAL
 {
-    public class HoteisDAO
+    public class CidadeDAO
     {
-        public void Create(Hotel hotel)
+        public void Create(Cidade cidade)
         {
             using (var db = new Contexto())
             {
-                db.Hoteis.Add(hotel);
+                db.Cidades.Add(cidade);
                 db.SaveChanges();
             }
 
         }
-        public Hotel FindById(Hotel hotel)
+        public Cidade Find(Cidade cidade)
         {
             using (var db = new Contexto())
             {
-                return db.Hoteis.Find(hotel.HotelId);
+                return db.Cidades.Find(cidade.CidadeId);
             }
         }
-        public IList<Hotel> List()
+        public Cidade FindById(int id)
         {
             using (var db = new Contexto())
             {
-                return db.Hoteis.ToList();
+                return db.Cidades.Find(id);
             }
         }
-        public void Update(Hotel hotel)
+        public IList<Cidade> List()
         {
             using (var db = new Contexto())
             {
-                db.Entry(hotel).State = EntityState.Modified;
+                return db.Cidades.ToList();
+            }
+        }
+        public void Update(Cidade cidade)
+        {
+            using (var db = new Contexto())
+            {
+                db.Entry(cidade).State = EntityState.Modified;
                 db.SaveChanges();
             }
 
         }
-        public void Delete(Hotel hotel)
+        public void Delete(Cidade cidade)
         {
             using (var db = new Contexto())
             {
-                Hotel hotelDB = FindById(hotel);
+                Cidade cidadeDB = Find(cidade);
 
-                if (hotelDB != null)
+                if (cidadeDB != null)
                 {
-                    db.Hoteis.Attach(hotel);
-                    db.Hoteis.Remove(hotel);
+                    db.Cidades.Attach(cidadeDB);
+                    db.Cidades.Remove(cidadeDB);
                     db.SaveChanges();
                 }
             }

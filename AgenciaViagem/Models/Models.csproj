@@ -49,7 +49,8 @@
   <ItemGroup>
     <Compile Include="DAL\CarrinhoDAO.cs" />
     <Compile Include="DAL\EmpresaAereaDAO.cs" />
-    <Compile Include="DAL\HoteisDAO.cs" />
+    <Compile Include="DAL\CidadeDAO.cs" />
+    <Compile Include="DAL\HotelDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Entities\Carrinho.cs" />
     <Compile Include="Entities\EmpresaAerea.cs" />

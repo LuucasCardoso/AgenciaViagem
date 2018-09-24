@@ -1,6 +1,8 @@
-﻿using Models.Entities;
+﻿using Controllers;
+using Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,6 +13,9 @@ namespace ViewWPF.ViewModels
 {
     class HotelViewModel : INotifyPropertyChanged
     {
+        readonly HotelController controllerHotel = new HotelController();
+        readonly CidadeController controllerCidade = new CidadeController();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
@@ -18,6 +23,37 @@ namespace ViewWPF.ViewModels
             if(PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public HotelViewModel()
+        {
+            Hoteis = new ObservableCollection<Hotel>(controllerHotel.ListarHoteis());
+            Cidades = new ObservableCollection<Cidade>(controllerCidade.ListarCidades());
+        }
+
+        private ObservableCollection<Cidade> cidades;
+
+        public ObservableCollection<Cidade> Cidades
+        {
+            get { return cidades; }
+            set
+            {
+                cidades = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<Hotel> hoteis;
+
+        public ObservableCollection<Hotel> Hoteis
+        {
+            get { return hoteis; }
+            set
+            {
+                hoteis = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
         private int hotelId;
 
@@ -57,13 +93,12 @@ namespace ViewWPF.ViewModels
         public int CidadeId
         {
             get { return cidadeId; }
-            set {
+            set
+            {
                 cidadeId = value;
                 NotifyPropertyChanged();
             }
         }
-
-
 
     }
 }

@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    public class HoteisController
-    {        
-        static readonly HoteisDAO dao = new HoteisDAO();
+    public class HotelController
+    {
+        static readonly HotelDAO dao = new HotelDAO();
 
         public void CadastrarHotel(Hotel hotel)
         {
             dao.Create(hotel);
         }
-        public IList<Hotel> ListarHotel()
+        public IList<Hotel> ListarHoteis()
         {
             return dao.List();
         }
-        public void EditarHotel(Hotel hotel )
+        public void EditarHotel(Hotel hotel)
         {
             dao.Update(hotel);
         }
-        public void ExcluirHoteis(Hotel hotel)
+        public void ExcluirHotel(Hotel hotel)
         {
             dao.Delete(hotel);
         }

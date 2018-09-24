@@ -23,89 +23,92 @@ namespace ViewWPF.Views.Administrador
     /// </summary>
     public partial class HotelCRUD : UserControl
     {
-        readonly static HoteisController controller = new HoteisController();
+        readonly static HotelController controller = new HotelController();
+
         public HotelCRUD()
         {
             InitializeComponent();
             DataContext = new HotelViewModel();
         }
 
-        private void OnCreate(object sender, RoutedEventArgs e)
+        private void OnSave(object sender, RoutedEventArgs e)
         {
-            HotelViewModel cvm = DataContext as HotelViewModel;
+            HotelViewModel hvm = DataContext as HotelViewModel;
             Hotel hotel = new Hotel
             {
-                Nome = cvm.Nome,
-                Descricao = cvm.Descricao
+                HotelId = hvm.HotelId,
+                Nome = hvm.Nome,
+                Descricao = hvm.Descricao,
+                CidadeId = hvm.CidadeId
             };
-            controller.CadastrarHotel(hotel);
-            dgHoteis.DataContext = new HotelViewModel();
-            GridCadastrarHotel.Visibility = Visibility.Collapsed;
-            GridListarHoteis.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
-            txtBoxCadNomeHotel.Text = "";
-            txtBoxCadDescricaoHotel.Text = "";
-        }
-        private void CallCreate(object sender, RoutedEventArgs e)
-        {
-            txtBoxCadNomeHotel.Text = "";
-            txtBoxCadDescricaoHotel.Text = "";
-            GridListarHoteis.Visibility = Visibility.Collapsed;
-            cadButton.Visibility = Visibility.Collapsed;
-            GridCadastrarHotel.Visibility = Visibility.Visible;
-        }
-        private void CallUpdate(object sender, RoutedEventArgs e)
-        {
-            Hotel hotel = (Hotel)dgHoteis.CurrentItem;
-            DataContext = new HotelViewModel{ HotelId = hotel.HotelId };
-            GridListarHoteis.Visibility = Visibility.Collapsed;
-            cadButton.Visibility = Visibility.Collapsed;
-            GridEditarHotel.Visibility = Visibility.Visible;
-            txtBoxEditNomeHotel.Text = hotel.Nome;
-            txtBoxEditDescricaoHotel.Text = hotel.Descricao;
+            try
+            {
+                if (hotel.Nome == null)
+                {
+                    throw new Exception("Favor, preencher o campo Nome!");
+                }
+                if (hotel.Descricao == null)
+                {
+                    throw new Exception("Favor, preencher o campo Descrição!");
+                }
+                if (hotel.CidadeId == 0)
+                {
+                    throw new Exception("Favor, selecionar uma Cidade!");
+                }
+                if (hotel.HotelId == 0)
+                {
+                    controller.CadastrarHotel(hotel);
+                }
+                else
+                {
+                    controller.EditarHotel(hotel);
+                }
+                dgHoteis.DataContext = new HotelViewModel();
+                GridCadastrarEditarHotel.Visibility = Visibility.Collapsed;
+                GridListarHoteis.Visibility = Visibility.Visible;
+                cadButton.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                lblMessageForm.Content = ex.Message;
+            }
         }
 
-        private void OnUpdate(object sender, RoutedEventArgs e)
+        private void CallSave(object sender, RoutedEventArgs e)
         {
-            txtBoxEditDescricaoHotel.Focus();
-            txtBoxEditNomeHotel.Focus();
-            txtBoxEditDescricaoHotel.Focus();
-            HotelViewModel evm = DataContext as HotelViewModel;
-            Hotel hotel = new Hotel
+            lblMessageForm.Content = "";
+            Button button = (Button)sender;
+            if (button.Name == "cadButton")
             {
-                HotelId = evm.HotelId,
-                Nome = evm.Nome,
-                Descricao = evm.Descricao
-            };
-            controller.EditarHotel(hotel);
-            dgHoteis.DataContext = new HotelViewModel();
-            GridEditarHotel.Visibility = Visibility.Collapsed;
-            GridListarHoteis.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
+                DataContext = new HotelViewModel();
+            }
+            else
+            {
+                Hotel h = (Hotel)dgHoteis.CurrentItem;
+                DataContext = new Hotel
+                {
+                    HotelId = h.HotelId,
+                    Nome = h.Nome,
+                    Descricao = h.Descricao,
+                    CidadeId = h.CidadeId
+                };
+            }
+            GridListarHoteis.Visibility = Visibility.Collapsed;
+            cadButton.Visibility = Visibility.Collapsed;
+            GridCadastrarEditarHotel.Visibility = Visibility.Visible;
         }
 
         private void OnDelete(object sender, RoutedEventArgs e)
         {
-            controller.ExcluirHoteis((Hotel)dgHoteis.CurrentItem);
+            controller.ExcluirHotel((Hotel)dgHoteis.CurrentItem);
             dgHoteis.DataContext = new HotelViewModel();
-            GridEditarHotel.Visibility = Visibility.Collapsed;
-            GridEditarHotel.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
         }
 
-        private void CreateBack(object sender, RoutedEventArgs e)
+        private void SaveBack(object sender, RoutedEventArgs e)
         {
-            GridCadastrarHotel.Visibility = Visibility.Collapsed;
+            GridCadastrarEditarHotel.Visibility = Visibility.Collapsed;
             GridListarHoteis.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
         }
-
-        private void EditBack(object sender, RoutedEventArgs e)
-        {
-            GridEditarHotel.Visibility = Visibility.Collapsed;
-            GridEditarHotel.Visibility = Visibility.Visible;
-            cadButton.Visibility = Visibility.Visible;
-        }
-
     }
 }
