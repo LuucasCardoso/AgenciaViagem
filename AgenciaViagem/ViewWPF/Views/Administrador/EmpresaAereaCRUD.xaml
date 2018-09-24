@@ -9,11 +9,11 @@
              mc:Ignorable="d" 
              Height="auto" Width="auto">
     <Grid x:Name="GridPrincipalEmpresaAerea">
-        <Button x:Name="cadButton" Click="CallSave" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0">
+        <Button x:Name="cadButton" Click="CallSave" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,14,0,0">
                 Cadastrar
         </Button>
 
-        <Grid x:Name="GridListarEmpresaAerea" Margin="0,45,0,-45.2">
+        <Grid x:Name="GridListarEmpresaAerea" Margin="0,68,0,-45.2">
             <DataGrid x:Name="dgEmpresasAereas" CanUserAddRows="False" ItemsSource="{Binding EmpresasAereas}" CanUserResizeColumns="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>

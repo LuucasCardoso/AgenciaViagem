@@ -14,7 +14,7 @@
                 <Button x:Name="cadButton" Width="auto" Content="Cadastrar" FontFamily="Champagne &amp; Limousines" Margin="24,14,12,0" Height="25" Click="CallSave" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label x:Name="lblMessage" FontSize="16" Width="auto" Foreground="Green" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"></Label>
             </StackPanel>
-            <Grid Margin="12,68,8.4,-48.2" VerticalAlignment="Top">
+            <Grid Margin="12,68,8.4,-45.2" VerticalAlignment="Top">
                 <DataGrid x:Name="dgUsuarios" CanUserAddRows="False" ItemsSource="{Binding Usuarios}" CanUserResizeColumns="False" AutoGenerateColumns="False" Margin="0,-10,0,9.8">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>

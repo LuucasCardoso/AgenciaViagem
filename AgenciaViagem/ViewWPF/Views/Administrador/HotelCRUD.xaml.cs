@@ -23,7 +23,8 @@ namespace ViewWPF.Views.Administrador
     /// </summary>
     public partial class HotelCRUD : UserControl
     {
-        readonly static HotelController controller = new HotelController();
+        readonly static CidadeController cidadeController = new CidadeController();
+        readonly static HotelController hotelController = new HotelController();
 
         public HotelCRUD()
         {
@@ -57,11 +58,11 @@ namespace ViewWPF.Views.Administrador
                 }
                 if (hotel.HotelId == 0)
                 {
-                    controller.CadastrarHotel(hotel);
+                    hotelController.CadastrarHotel(hotel);
                 }
                 else
                 {
-                    controller.EditarHotel(hotel);
+                    hotelController.EditarHotel(hotel);
                 }
                 dgHoteis.DataContext = new HotelViewModel();
                 GridCadastrarEditarHotel.Visibility = Visibility.Collapsed;
@@ -100,7 +101,7 @@ namespace ViewWPF.Views.Administrador
 
         private void OnDelete(object sender, RoutedEventArgs e)
         {
-            controller.ExcluirHotel((Hotel)dgHoteis.CurrentItem);
+            hotelController.ExcluirHotel((Hotel)dgHoteis.CurrentItem);
             dgHoteis.DataContext = new HotelViewModel();
         }
 
@@ -109,6 +110,13 @@ namespace ViewWPF.Views.Administrador
             GridCadastrarEditarHotel.Visibility = Visibility.Collapsed;
             GridListarHoteis.Visibility = Visibility.Visible;
             cadButton.Visibility = Visibility.Visible;
+        }
+
+        private void ChamaCidade(object sender, System.EventArgs e)
+        {
+            Hotel hotel = (Hotel)dgHoteis.CurrentItem;
+            Cidade cidade = cidadeController.BuscarPorId(hotel.CidadeId);
+            sender = cidade.Nome;
         }
     }
 }

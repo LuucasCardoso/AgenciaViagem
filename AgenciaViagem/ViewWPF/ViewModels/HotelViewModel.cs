@@ -28,6 +28,10 @@ namespace ViewWPF.ViewModels
         {
             Hoteis = new ObservableCollection<Hotel>(controllerHotel.ListarHoteis());
             Cidades = new ObservableCollection<Cidade>(controllerCidade.ListarCidades());
+            foreach(var hotel in Hoteis)
+            {
+                hotel._Cidade = controllerCidade.BuscarPorId(hotel.CidadeId);
+            }
         }
 
         private ObservableCollection<Cidade> cidades;
@@ -98,6 +102,14 @@ namespace ViewWPF.ViewModels
                 cidadeId = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        private Cidade _cidade;
+
+        public Cidade _Cidade
+        {
+            get { return _cidade; }
+            set { _cidade = value; }
         }
 
     }
