@@ -44,14 +44,17 @@
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222">
 
                 <Grid Margin="0, 285, 0, 0">
+                        <!-- número cartão  -->
+                    <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="324,28,10,102" />
+                        <!--finalizar compra-->
+                    <Button Height="60" Background="LightSeaGreen" Content="Finalizar Compra" Margin="324,86,10,14" Click="Button_Click"/>
+                        <!--   atualizar    -->
+                    <Button Height="60" Background="LightSeaGreen" Content="Atualizar" Margin="10,86,324,14"/>
+                        <!--realizar  compra--> 
+                    <Button Height="60" Background="LightSeaGreen" Content="Realizar Nova Compra" Margin="10,10,324,90" Click="ComprarMais_Click"/>
 
-                    <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="309,21,10,109" />
-                    <Button Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="309,81,10,10" Click="Button_Click"/>
-                    <Button Height="Auto" Background="LightSeaGreen" Content="Atualizar" Margin="10,81,353,10"/>
-                    <Button Height="Auto" Background="LightSeaGreen" Content="Realizar Nova Compra" Margin="10,10,353,95" Click="ComprarMais_Click"/>
-
-                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="103" Foreground="Red" Margin="309,56,196,79" Visibility="Hidden"/>
-                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="181"  Foreground="Green" Margin="417,56,10,79" Visibility="Hidden"/>
+                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="103" Foreground="Red" Margin="324,63,181,72" Visibility="Hidden"/>
+                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="181"  Foreground="Green" Margin="417,63,10,72" Visibility="Hidden"/>
 
                 </Grid>
 
