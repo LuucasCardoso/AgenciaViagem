@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PaisController.cs" />
+    <Compile Include="EstadoController.cs" />
     <Compile Include="CidadeController.cs" />
     <Compile Include="HotelController.cs" />
     <Compile Include="ListCarrinhoController.cs" />

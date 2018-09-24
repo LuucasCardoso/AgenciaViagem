@@ -2,6 +2,7 @@
 using Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace ViewWPF.Views.Administrador
     public partial class HotelCRUD : UserControl
     {
         readonly static CidadeController cidadeController = new CidadeController();
+        readonly static EstadoController estadoController = new EstadoController();
+        readonly static PaisController paisController = new PaisController();
         readonly static HotelController hotelController = new HotelController();
 
         public HotelCRUD()
@@ -112,11 +115,30 @@ namespace ViewWPF.Views.Administrador
             cadButton.Visibility = Visibility.Visible;
         }
 
+        private void ChamaEstado(object sender, System.EventArgs e)
+        {
+            if (cmbBoxcadPaisHotel.SelectedItem != null)
+            {
+                Pais pais = (Pais)cmbBoxcadPaisHotel.SelectedItem;
+                cmbBoxCadEstadoHotel.ItemsSource = new ObservableCollection<Estado>(estadoController.ListarEstadosPorPais(pais.PaisId));
+            }
+            else
+            {
+                cmbBoxCadEstadoHotel.SelectedItem = null;
+            }
+        }
+
         private void ChamaCidade(object sender, System.EventArgs e)
         {
-            Hotel hotel = (Hotel)dgHoteis.CurrentItem;
-            Cidade cidade = cidadeController.BuscarPorId(hotel.CidadeId);
-            sender = cidade.Nome;
+            if (cmbBoxCadEstadoHotel.SelectedItem != null)
+            {
+                Estado estado = (Estado)cmbBoxCadEstadoHotel.SelectedItem;
+                cmbBoxCadCidadeHotel.ItemsSource = new ObservableCollection<Cidade>(cidadeController.ListarCidadesPorEstado(estado.EstadoId));
+            }
+            else
+            {
+                cmbBoxCadCidadeHotel.SelectedValue = null;
+            }
         }
     }
 }

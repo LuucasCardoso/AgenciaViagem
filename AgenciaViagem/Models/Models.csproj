@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CarrinhoDAO.cs" />
+    <Compile Include="DAL\PaisDAO.cs" />
+    <Compile Include="DAL\EstadoDAO.cs" />
     <Compile Include="DAL\EmpresaAereaDAO.cs" />
     <Compile Include="DAL\CidadeDAO.cs" />
     <Compile Include="DAL\HotelDAO.cs" />

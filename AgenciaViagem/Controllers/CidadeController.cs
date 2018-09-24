@@ -20,6 +20,19 @@ namespace Controllers
         {
             return dao.List();
         }
+        public IList<Cidade> ListarCidadesPorEstado(int id)
+        {
+            IList<Cidade> cidadesFiltradas = new List<Cidade>();
+            IList<Cidade> cidades = dao.List();
+            foreach (var c in cidades)
+            {
+                if (c.EstadoId == id)
+                {
+                    cidadesFiltradas.Add(c);
+                }
+            }
+            return cidadesFiltradas;
+        }
         public Cidade BuscarPorId(int id)
         {
             return dao.FindById(id);
