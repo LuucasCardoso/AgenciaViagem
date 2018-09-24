@@ -28,9 +28,9 @@
             </materialDesign:TransitioningContent>
         </Grid>
 
-        <Grid x:Name="GridInferior" Visibility="Hidden">
+        <Grid x:Name="GridInferior"  Visibility="Hidden">
 
-            <Grid Margin="0, 100, 0, 0">
+            <Grid Margin="0, 120, 0, 0">
 
                 <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.RowSpan="2">
                     <Grid>

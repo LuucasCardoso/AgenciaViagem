@@ -8,34 +8,15 @@
              mc:Ignorable="d" 
              Height="auto" Width="auto">
     <Grid x:Name="GridPrincipal" Width="608" Height="445">
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-            
-            <Grid x:Name="GridSuperior" Width="580" Height="65" Margin="18,6,10,371">
-                <Button Width="250" Height="50" Margin="0,5,330,10" Background="LightGreen" Content="Comprar Mais" Foreground="Black" Click="ComprarMais_Click"/>
-                <Button Width="250" Height="50" Margin="330,5,0,10" Background="Yellow" Content="Atualizar" Click="Atualizar_Click" Foreground="Black"/>
-            </Grid>
-        </materialDesign:TransitioningContent>
 
-        <Grid x:Name="GridCompras" Width="580" Height="300">
-            <Grid.Effect>
-                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-            </Grid.Effect>
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-                <Border BorderBrush="Black" BorderThickness="2" Background="FloralWhite">
-                    <Label x:Name="SemCompras" Content="Não há compras no carrinho" HorizontalAlignment="Center" Width="160" Height="30" Margin="209,134,211,136" Foreground="Red"/>
-                </Border>
-            </materialDesign:TransitioningContent>
-        </Grid>
-
-
-        <Grid x:Name="GridListCompras" Width="580" Height="300" Visibility="Hidden" Margin="14,72,14,73">
+        <Grid x:Name="GridListCompras" Width="608" Height="280"  VerticalAlignment="Top">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
             </Grid.Effect>
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-                <Border BorderBrush="Black" BorderThickness="2" Background="FloralWhite">
+                <Border Background="FloralWhite" Margin="10">
 
-                    <DataGrid x:Name="DataGridCompras" Width="580" Height="300" ItemsSource="{Binding Carrinho}">
+                    <DataGrid x:Name="DataGridCompras" ItemsSource="{Binding Carrinho}">
                         <!--COLUNAS-->
                         <DataGrid.Columns>
                             <DataGridTextColumn IsReadOnly="True" Binding="{Binding Compra}" Header="Compra"/>
@@ -58,22 +39,25 @@
             </materialDesign:TransitioningContent>
         </Grid>
 
+        <Grid x:Name="GridInferior">
 
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222" Margin="14,0,0,0">
-            <Grid x:Name="GridInferior" Width="580" Height="65" Margin="14,372,14,7">
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222">
 
+                <Grid Margin="0, 285, 0, 0">
 
-                <TextBox x:Name="Cartao" Width="125" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="10,20,259,17"/>
+                    <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="309,21,10,109" />
+                    <Button Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="309,81,10,10" Click="Button_Click"/>
+                    <Button Height="Auto" Background="LightSeaGreen" Content="Atualizar" Margin="10,81,353,10"/>
+                    <Button Height="Auto" Background="LightSeaGreen" Content="Realizar Nova Compra" Margin="10,10,353,95" Click="ComprarMais_Click"/>
 
-                <Button Width="200" Height="Auto" Background="LightSeaGreen" Content="Finalizar Compra" Margin="350,10,30,18" Click="Button_Click"></Button>
+                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="103" Foreground="Red" Margin="309,56,196,79" Visibility="Hidden"/>
+                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="181"  Foreground="Green" Margin="417,56,10,79" Visibility="Hidden"/>
 
-                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="98" Height="30" Margin="433,47,49,-12" Foreground="Red" Visibility="Hidden"/>
-                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="182" Height="30" Margin="388,47,10,-12" Foreground="Green" Visibility="Hidden"/>
+                </Grid>
 
-               
+            </materialDesign:TransitioningContent>
 
-            </Grid>
-        </materialDesign:TransitioningContent>
+        </Grid>
 
     </Grid>
 </UserControl>
