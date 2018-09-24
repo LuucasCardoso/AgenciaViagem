@@ -16,13 +16,13 @@
 
                 <StackPanel Width="608" Height="120" VerticalAlignment="Top">
 
-                    <ComboBox ItemsSource="{Binding Paises}" DisplayMemberPath="Nome" SelectedValuePath="Nome" SelectedValue="{Binding Pais}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País" Height="26" Background="FloralWhite" Margin="10,10,382,0"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Estado" Height="26" Background="FloralWhite" Margin="10,10,382,10"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Cidade"  Height="26"  Background="FloralWhite" Margin="10,0,382,10"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="231,-160,217,0"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="231,-80,217,0"/>
+                    <ComboBox ItemsSource="{Binding Paises}" DisplayMemberPath="Nome" SelectedValuePath="Nome" SelectedValue="{Binding Pais}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País" Height="26" Background="FloralWhite" Margin="10,10,321,0"/>
+                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Estado" Height="26" Background="FloralWhite" Margin="10,10,321,10"/>
+                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Cidade"  Height="26"  Background="FloralWhite" Margin="10,0,321,10"/>
+                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
+                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
 
-                    <Button VerticalAlignment="Bottom" Content="Buscar Hotéis Disponíveis" FontFamily="Champagne &amp; Limousines"  Click="Button_Click" Height="54" Margin="404,-150,10,33"/>
+                    <Button VerticalAlignment="Bottom" Content="Buscar Hotéis Disponíveis" FontFamily="Champagne &amp; Limousines"  Click="Button_Click" Height="26" Margin="321,-35,10,33"/>
 
                 </StackPanel>
 
