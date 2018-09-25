@@ -16,6 +16,7 @@ namespace ViewWPF.ViewModels
         readonly HotelController controllerHotel = new HotelController();
         readonly CidadeController controllerCidade = new CidadeController();
         readonly PaisController controllerPais = new PaisController();
+        readonly EstadoController controllerEstado = new EstadoController();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -31,7 +32,10 @@ namespace ViewWPF.ViewModels
             Paises = new ObservableCollection<Pais>(controllerPais.ListarPaises());
             foreach(var hotel in Hoteis)
             {
-                hotel._Cidade = controllerCidade.BuscarPorId(hotel.CidadeId);
+                _Cidade = controllerCidade.BuscarPorId(hotel.CidadeId);
+                _Cidade._Estado = controllerEstado.BuscarPorId(_Cidade.EstadoId);
+                _Cidade._Estado._Pais = controllerPais.BuscarPorId(_Cidade._Estado.PaisId);
+                hotel._Cidade = _Cidade;
             }
         }
 
