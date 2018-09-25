@@ -10,38 +10,63 @@
 
     <Grid x:Name="GridPrincipal" Width="auto" Height="445">
 
-        <DataGrid x:Name="dgPassagens" CanUserAddRows="False" ItemsSource="{Binding Passagens}" CanUserResizeColumns="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Empresa Aérea" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=_EmpresaAerea.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Data Embarque" Width="auto" IsReadOnly="True" Binding="{Binding DataEmbarque}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Data Volta" Width="auto" IsReadOnly="True" Binding="{Binding DataVolta}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Preço" Width="auto" IsReadOnly="True" Binding="{Binding Preco}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cidade Origem" Width="auto" IsReadOnly="True" Binding="{Binding CidadeOrigem}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cidade Destino" Width="auto" IsReadOnly="True" Binding="{Binding CidadeDestino}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Cliente" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=_Usuario.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Click="OnDelete" Background="Transparent" BorderThickness="0">
-                                <materialDesign:PackIcon Kind="Delete" Foreground="Red" IsHitTestVisible="True" />
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid x:Name="GridSuperior" Width="608" Height="350"  VerticalAlignment="Top">
+
+            <DataGrid x:Name="dgPassagens" CanUserAddRows="False" ItemsSource="{Binding Passagens}" CanUserResizeColumns="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Empresa Aérea" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=_EmpresaAerea.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Data Embarque" Width="auto" IsReadOnly="True" Binding="{Binding DataEmbarque}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Data Volta" Width="auto" IsReadOnly="True" Binding="{Binding DataVolta}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Preço" Width="auto" IsReadOnly="True" Binding="{Binding Preco}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Cidade Origem" Width="auto" IsReadOnly="True" Binding="{Binding CidadeOrigem}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Cidade Destino" Width="auto" IsReadOnly="True" Binding="{Binding CidadeDestino}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Cliente" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=_Usuario.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="OnDelete" Background="Transparent" BorderThickness="0">
+                                    <materialDesign:PackIcon Kind="Delete" Foreground="Red" IsHitTestVisible="True" />
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid x:Name="GridInferior">
+
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222">
+
+                <Grid Margin="0, 285, 0, 0">
+                    <!-- número cartão  -->
+                    <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="10,99,324,31" />
+                    <!--finalizar compra-->
+                    <Button Height="60" Background="LightSeaGreen" Content="Finalizar Compra" Margin="324,86,10,14" Click="Button_Click"/>
+                    <!--   atualizar    -->
+                    <!--realizar  compra-->
+
+                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="103" Foreground="Red" Margin="324,63,181,72" Visibility="Hidden"/>
+                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="181"  Foreground="Green" Margin="417,63,10,72" Visibility="Hidden"/>
+
+                </Grid>
+
+            </materialDesign:TransitioningContent>
+
+        </Grid>
 
     </Grid>
 </UserControl>

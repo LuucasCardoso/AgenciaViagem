@@ -10,7 +10,7 @@
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#FF0069C0" Height="10"/>
             <Grid Margin="0,5,5,5">
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,0,355,0" Width="488" RenderTransformOrigin="0.482,0.5">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="-127,0,402,0" Width="488" RenderTransformOrigin="0.482,0.5">
                     <TextBlock Text="ADMINISTRADOR" HorizontalAlignment="Center" FontSize="20" FontFamily="Segoe UI Semibold" Margin="10 0" Foreground="Black"/>
                     <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Blue">
                         <materialDesign:PackIcon Kind="Lock"/>

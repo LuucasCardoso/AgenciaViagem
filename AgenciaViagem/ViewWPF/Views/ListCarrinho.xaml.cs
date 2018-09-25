@@ -45,6 +45,8 @@ namespace ViewWPF.Views
             {
                 SucessoCompra.Visibility = Visibility.Visible;
                 ErroCompra.Visibility = Visibility.Hidden;
+                DataGridCompras.DataContext = new EmpresaAereaViewModel();
+                GridListCompras.Visibility = Visibility.Visible;
             }
         }
         private void OnDelete(object sender, RoutedEventArgs e)
