@@ -20,7 +20,14 @@ namespace Models.DAL
             }
             
         }
-        public EmpresaAerea FindById (EmpresaAerea empresaAerea)
+        public EmpresaAerea FindById(int id)
+        {
+            using (var db = new Contexto())
+            {
+                return db.EmpresasAereas.Find(id);
+            }
+        }
+        public EmpresaAerea Find (EmpresaAerea empresaAerea)
         {
             using (var db = new Contexto())
             {
@@ -47,7 +54,7 @@ namespace Models.DAL
         {
             using (var db = new Contexto())
             {
-                EmpresaAerea empresaAereaDB = FindById(empresaAerea);
+                EmpresaAerea empresaAereaDB = Find(empresaAerea);
 
                 if (empresaAereaDB != null)
                 {

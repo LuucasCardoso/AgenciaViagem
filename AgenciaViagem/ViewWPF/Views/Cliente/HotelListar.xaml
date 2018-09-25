@@ -8,91 +8,73 @@
              mc:Ignorable="d" 
              Height="auto" Width="auto">
 
-    <Grid x:Name="GridPrincipal" Width="608" Height="445">
+    <Grid x:Name="GridPrincipal" Width="auto" Height="445">
 
-        <Grid x:Name="GridSuperior" Width="608" Height="120" VerticalAlignment="Top">
+        <Grid x:Name="GridSuperior" Width="608" Height="150" VerticalAlignment="Top">
 
             <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
 
                 <StackPanel Width="608" Height="120" VerticalAlignment="Top">
 
-                    <ComboBox ItemsSource="{Binding Paises}" DisplayMemberPath="Nome" SelectedValuePath="Nome" SelectedValue="{Binding Pais}" VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="País" Height="26" Background="FloralWhite" Margin="10,10,321,0"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Estado" Height="26" Background="FloralWhite" Margin="10,10,321,10"/>
-                    <ComboBox VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Cidade"  Height="26"  Background="FloralWhite" Margin="10,0,321,10"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
-                    <DatePicker VerticalAlignment="Stretch" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
 
-                    <Button VerticalAlignment="Bottom" Content="Buscar Hotéis Disponíveis" FontFamily="Champagne &amp; Limousines"  Click="Button_Click" Height="26" Margin="321,-35,10,33"/>
+                    <ComboBox x:Name="cmbBoxlistPaisHotel" SelectionChanged="ChamaEstado" ItemsSource="{Binding Paises}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="País do Hotel" Height="26" Background="FloralWhite" Margin="10,10,321,0"/>
+                    <ComboBox x:Name="cmbBoxlistEstadoHotel" SelectionChanged="ChamaCidade" DisplayMemberPath="Nome"  materialDesign:HintAssist.Hint="Estado do Hotel" Height="26" Background="FloralWhite" Margin="10,10,321,10"/>
+                    <ComboBox x:Name="cmbBoxlistCidadeHotel" materialDesign:ValidationAssist.Suppress="True" SelectedValuePath="CidadeId" SelectedValue="{Binding CidadeId, Mode=TwoWay}" DisplayMemberPath="Nome"  materialDesign:HintAssist.Hint="Cidade do Hotel" Height="26"  Background="FloralWhite" Margin="10,0,321,10"/>
+                    <DatePicker x:Name="dtCheckIn" VerticalAlignment="Stretch" DisplayDate="{Binding CheckIn}" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
+                    <DatePicker x:Name="dtCheckOut" VerticalAlignment="Stretch" DisplayDate="{Binding CheckOut}" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="321,-35,10,33">
+                        <Button VerticalAlignment="Bottom" Background="Gray" Content="Limpar Filtro" FontFamily="Champagne &amp; Limousines"  Click="LimparFiltro" Height="26" />
+                        <Button VerticalAlignment="Bottom" Content="Filtrar Hotéis" FontFamily="Champagne &amp; Limousines"  Click="FiltrarHotéis" Height="26" Margin="30,0,0,0"/>
+                    </StackPanel>
 
                 </StackPanel>
 
 
 
             </materialDesign:TransitioningContent>
+            <Label x:Name="lblMessage" Width="auto" HorizontalAlignment="Center" Foreground="Green" Margin="0,120,0,0"></Label>
         </Grid>
-
-        <Grid x:Name="GridInferior" Visibility="Hidden">
-
-            <Grid Width="608" Margin="0,120,0,0">
-
-                <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.RowSpan="2">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0" Height="260" Background="#FFF3F3F3" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200" Background="Yellow">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Hotel ***" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/Hotel3.jpg" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Gol"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Column="1" Height="260" Background="Yellow" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="hotel ****" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/Hotel4.jpg" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Azul"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Column="2" Height="260" Background="Yellow" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="hotel *****" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/Hotel5.jpg" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Latam"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </Grid>
-                </materialDesign:TransitioningContent>
-            </Grid>
-
+        <Grid x:Name="Teste" Visibility="Visible"  Width="auto" Margin="0,150,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgHoteis" CanUserAddRows="False" ItemsSource="{Binding Hoteis}" CanUserResizeColumns="True" AutoGenerateColumns="False" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nome" IsReadOnly="True" Binding="{Binding Nome}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Descrição" Width="200" IsReadOnly="True" Binding="{Binding Descricao}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="País" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=_Cidade._Estado._Pais.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Estado" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=_Cidade._Estado.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Cidade" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=_Cidade.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="AdicionarReservaHotel" Background="Transparent" BorderThickness="0">
+                                    <materialDesign:PackIcon Kind="Plus" Foreground="Blue" IsHitTestVisible="True" />
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
-
-
     </Grid>
 </UserControl>

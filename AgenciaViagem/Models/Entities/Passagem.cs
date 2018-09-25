@@ -11,17 +11,11 @@ namespace Models.Entities
     [Table("Passagens")]
     public class Passagem
     {
+        [Key]
         public int PassagemId { get; set; }
         public decimal Preco { get; set; }
         public DateTime DataEmbarque { get; set; }
         public DateTime DataVolta { get; set; }
-        public enum Classe
-        {
-            VIP,
-            Convencional,
-            Executiva,
-            Master
-        }
         public string CidadeOrigem { get; set; }
         public string CidadeDestino { get; set; }
 
@@ -35,6 +29,10 @@ namespace Models.Entities
         //Propriedades Empresas Aéreas
         public int EmpresaAereaId { get; set; }
         public virtual EmpresaAerea _EmpresaAerea { get; set; }
+
+        //Propriedades Usuario
+        public int UsuarioId { get; set; }
+        public virtual Usuario _Usuario { get; set; }
 
         //Propriedades Pacotes
         public virtual ICollection<Pacote> _Pacotes { get; set; }

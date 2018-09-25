@@ -61,65 +61,6 @@ namespace CriaBanco
                 Console.WriteLine("Entidade Teste já existe!");
             }
 
-            // Quarto Tipo
-            var QuartoTipo = from qt in db.QuartoTipos
-                                   where qt.Nome == "Básico"
-                                   select qt;
-            if (!QuartoTipo.Any())
-            {
-                db.QuartoTipos.Add(new QuartoTipo()
-                {
-                    Nome = "Básico",
-                    QuantidadeQuartos = 1,
-                    CamaCasal = false,
-                    Hidromassagem = false,
-                    ServicoQuarto = false
-                });
-                Console.WriteLine("Tipo de quarto 'Básico' criada!");
-            }
-            else
-            {
-                Console.WriteLine("Tipo de quarto 'Básico' já existe!");
-            }
-            QuartoTipo = from qt in db.QuartoTipos
-                             where qt.Nome == "Intermediário"
-                             select qt;
-            if (!QuartoTipo.Any())
-            {
-                db.QuartoTipos.Add(new QuartoTipo()
-                {
-                    Nome = "Intermediário",
-                    QuantidadeQuartos = 2,
-                    CamaCasal = true,
-                    Hidromassagem = false,
-                    ServicoQuarto = true
-                });
-                Console.WriteLine("Tipo de quarto 'Intermediário' criada!");
-            }
-            else
-            {
-                Console.WriteLine("Tipo de quarto 'Intermediário' já existe!");
-            }
-            QuartoTipo = from qt in db.QuartoTipos
-                             where qt.Nome == "Patrão"
-                             select qt;
-            if (!QuartoTipo.Any())
-            {
-                db.QuartoTipos.Add(new QuartoTipo()
-                {
-                    Nome = "Patrão",
-                    QuantidadeQuartos = 3,
-                    CamaCasal = true,
-                    Hidromassagem = true,
-                    ServicoQuarto = true
-                });
-                Console.WriteLine("Tipo de quarto 'Patrão' criada!");
-            }
-            else
-            {
-                Console.WriteLine("Tipo de quarto 'Patrão' já existe!");
-            }
-
             // Pais
             var pais = from p in db.Paises
                        where p.Nome == "Itália"

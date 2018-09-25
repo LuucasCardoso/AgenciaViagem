@@ -16,6 +16,10 @@ namespace Controllers
         {
             dao.Create(hotel);
         }
+        public Hotel BuscarPorId(int id)
+        {
+            return dao.FindById(id);
+        }
         public IList<Hotel> ListarHoteis()
         {
             return dao.List();

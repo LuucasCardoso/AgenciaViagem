@@ -19,11 +19,14 @@ namespace Models.Entities
         public string Descricao { get; set; }
 
         //Propriedades Quartos
-        public virtual ICollection<Quarto> Quartos { get; set; }
+        //public virtual ICollection<Quarto> Quartos { get; set; }
 
         //Propriedades Cidade
         [Required]
         public int CidadeId { get; set; }
         public virtual Cidade _Cidade { get; set; }
+
+        //Propriedades ReservaHotel
+        public virtual ICollection<ReservaHotel> _ReservasHotel { get; set; }
     }
 }

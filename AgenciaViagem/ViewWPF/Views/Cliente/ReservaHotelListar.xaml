@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ViewWPF.Views.Cliente.ReservaHotelListar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ViewWPF.Views.Cliente"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             Height="auto" Width="auto">
+
+    <Grid x:Name="GridPrincipal" Width="auto" Height="445">
+
+        <DataGrid x:Name="dgReservas" CanUserAddRows="False" ItemsSource="{Binding ReservasHotel}" CanUserResizeColumns="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Hotel" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=_Hotel.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="CheckIn" Width="auto" IsReadOnly="True" Binding="{Binding CheckIn}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CheckOut" Width="auto" IsReadOnly="True" Binding="{Binding CheckOut}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Data Reserva" Width="auto" IsReadOnly="True" Binding="{Binding DataReserva}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Cliente" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=_Usuario.Nome}" HorizontalAlignment="Center" Width="90" Height="20"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="75" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="OnDelete" Background="Transparent" BorderThickness="0">
+                                <materialDesign:PackIcon Kind="Delete" Foreground="Red" IsHitTestVisible="True" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

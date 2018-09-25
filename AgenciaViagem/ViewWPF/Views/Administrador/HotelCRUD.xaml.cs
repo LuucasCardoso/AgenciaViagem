@@ -26,7 +26,6 @@ namespace ViewWPF.Views.Administrador
     {
         readonly static CidadeController cidadeController = new CidadeController();
         readonly static EstadoController estadoController = new EstadoController();
-        readonly static PaisController paisController = new PaisController();
         readonly static HotelController hotelController = new HotelController();
 
         public HotelCRUD()

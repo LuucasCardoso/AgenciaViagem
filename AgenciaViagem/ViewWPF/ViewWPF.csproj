@@ -69,6 +69,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\PassagemViewModel.cs" />
+    <Compile Include="ViewModels\ReservaHotelViewModel.cs" />
     <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\EmpresaAereaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
@@ -86,6 +88,12 @@
     </Compile>
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cliente\PassagemListar.xaml.cs">
+      <DependentUpon>PassagemListar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cliente\ReservaHotelListar.xaml.cs">
+      <DependentUpon>ReservaHotelListar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListCarrinho.xaml.cs">
       <DependentUpon>ListCarrinho.xaml</DependentUpon>
@@ -136,6 +144,14 @@
     <Page Include="Views\Cadastro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cliente\PassagemListar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Cliente\ReservaHotelListar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ListCarrinho.xaml">
       <SubType>Designer</SubType>

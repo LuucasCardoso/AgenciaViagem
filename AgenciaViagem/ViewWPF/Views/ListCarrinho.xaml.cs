@@ -23,7 +23,6 @@ namespace ViewWPF.Views
     /// </summary>
     public partial class ListCarrinho : UserControl
     {
-        readonly static ListCarrinhoController controller = new ListCarrinhoController();
         public ListCarrinho()
         {
             InitializeComponent();
@@ -50,7 +49,6 @@ namespace ViewWPF.Views
         }
         private void OnDelete(object sender, RoutedEventArgs e)
         {
-            controller.ExcluirCarrinho((Carrinho)DataGridCompras.CurrentItem);
             DataGridCompras.DataContext = new EmpresaAereaViewModel();
             GridListCompras.Visibility = Visibility.Visible;
         }

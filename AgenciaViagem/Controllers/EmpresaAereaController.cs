@@ -20,6 +20,10 @@ namespace Controllers
         {
             return dao.List();
         }
+        public EmpresaAerea BuscarPorId(int id)
+        {
+            return dao.FindById(id);
+        }
         public void EditarEmpresaAerea(EmpresaAerea empresaAerea)
         {
             dao.Update(empresaAerea);

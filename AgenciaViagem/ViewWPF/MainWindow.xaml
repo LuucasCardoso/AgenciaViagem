@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-        mc:Ignorable="d" Height="498" Width="858" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="498" Width="auto" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#FF0069C0" Height="10"/>
@@ -81,6 +81,18 @@
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Cart" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Carrinho" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Ticket" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Reservas Hotel" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Ticket" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Reservas Pass" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
             </ListView>

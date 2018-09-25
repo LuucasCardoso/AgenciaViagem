@@ -26,17 +26,28 @@ namespace ViewWPF.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public HotelViewModel()
+        public void CarregaLocal()
         {
-            Hoteis = new ObservableCollection<Hotel>(controllerHotel.ListarHoteis());
-            Paises = new ObservableCollection<Pais>(controllerPais.ListarPaises());
-            foreach(var hotel in Hoteis)
+            foreach (var hotel in Hoteis)
             {
                 _Cidade = controllerCidade.BuscarPorId(hotel.CidadeId);
                 _Cidade._Estado = controllerEstado.BuscarPorId(_Cidade.EstadoId);
                 _Cidade._Estado._Pais = controllerPais.BuscarPorId(_Cidade._Estado.PaisId);
                 hotel._Cidade = _Cidade;
             }
+        }
+
+        public HotelViewModel()
+        {
+            Hoteis = new ObservableCollection<Hotel>(controllerHotel.ListarHoteis());
+            Paises = new ObservableCollection<Pais>(controllerPais.ListarPaises());
+            CarregaLocal();
+        }
+
+        public HotelViewModel(ObservableCollection<Hotel> hoteis)
+        {
+            Hoteis = hoteis;
+            CarregaLocal();
         }
 
         private ObservableCollection<Pais> paises;

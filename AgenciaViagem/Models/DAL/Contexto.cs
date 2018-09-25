@@ -21,12 +21,9 @@ namespace Models.DAL
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Pais> Paises { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
-        public DbSet<Quarto> Quartos { get; set; }
-        public DbSet<QuartoTipo> QuartoTipos { get; set; }
         public DbSet<Hotel> Hoteis { get; set; }
         public DbSet<Pacote> Pacotes { get; set; }
         public DbSet<Passagem> Passagens { get; set; }
-        public DbSet<Carrinho> Carrinhos { get; set; }
+        public DbSet<ReservaHotel> ReservasHotel { get; set; }
     }
 }

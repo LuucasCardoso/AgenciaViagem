@@ -28,6 +28,13 @@ namespace Models.DAL
                 return usuariodb.FirstOrDefault();
             }
         }
+        public Usuario Find(int id)
+        {
+            using (var db = new Contexto())
+            {
+                return db.Usuarios.Find(id);
+            }
+        }
         public IList<Usuario> List()
         {
             using (var db = new Contexto())

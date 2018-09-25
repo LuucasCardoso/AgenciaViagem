@@ -9,13 +9,10 @@ using System.Threading.Tasks;
 namespace Models.Entities
 {
 
-    [Table("Carrinho")]
     public class Carrinho
     {
-        public int CarrinhoId { get; set; }
-
-        //Propriedades ItemCompra
-        public virtual ItemCompra _ItemCompra { get; set; }
+        //Propriedades ReservaHotel
+        public List<ReservaHotel> reservasHotel { get; set; }
 
     }
 }

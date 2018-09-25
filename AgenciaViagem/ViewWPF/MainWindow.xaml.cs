@@ -66,7 +66,15 @@ namespace ViewWPF.Views
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new ListCarrinho());
                     break;
-                    
+                case 5:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ReservaHotelListar());
+                    break;
+                case 6:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new PassagemListar());
+                    break;
+
                 default:
                     break;
                 }

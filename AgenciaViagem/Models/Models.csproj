@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\CarrinhoDAO.cs" />
+    <Compile Include="DAL\PassagemDAO.cs" />
+    <Compile Include="DAL\ReservaHotelDAO.cs" />
     <Compile Include="DAL\PaisDAO.cs" />
     <Compile Include="DAL\EstadoDAO.cs" />
     <Compile Include="DAL\EmpresaAereaDAO.cs" />
@@ -57,11 +58,11 @@
     <Compile Include="Entities\Carrinho.cs" />
     <Compile Include="Entities\EmpresaAerea.cs" />
     <Compile Include="Entities\Hotel.cs" />
-    <Compile Include="Entities\ItemCompra.cs" />
     <Compile Include="Entities\Pacote.cs" />
     <Compile Include="Entities\Passagem.cs" />
     <Compile Include="Entities\Quarto.cs" />
     <Compile Include="Entities\QuartoTipo.cs" />
+    <Compile Include="Entities\ReservaHotel.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="DAL\Contexto.cs" />

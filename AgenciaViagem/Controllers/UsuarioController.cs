@@ -29,6 +29,11 @@ namespace Controllers
             }
         }
 
+        public Usuario BuscarPorId(int id)
+        {
+            return dao.Find(id);
+        }
+
         public void CadastrarUsuario(Usuario usuario)
         {
             dao.Create(usuario);
