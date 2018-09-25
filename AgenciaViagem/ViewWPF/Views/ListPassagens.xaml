@@ -18,8 +18,8 @@
                     <ComboBox VerticalAlignment="Stretch"  SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeOrigem, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Embarque" Height="26" Background="FloralWhite" Margin="10,10,321,0"/>
                     <ComboBox VerticalAlignment="Stretch" SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeDestino, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Desembarque" Height="26" Background="FloralWhite" Margin="10,10,321,10"/>
                     <ComboBox VerticalAlignment="Stretch" SelectedValuePath="EmpresaAereaId" ItemsSource="{Binding EmpresasAereas}" SelectedValue="{Binding EmpresaAereaId, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Linha Aerea"  Height="26"  Background="FloralWhite" Margin="10,0,321,10"/>
-                    <DatePicker VerticalAlignment="Stretch" SelectedDate="{Binding DataEmbarque}" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
-                    <DatePicker VerticalAlignment="Stretch" SelectedDate="{Binding DataVolta}" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
+                    <DatePicker VerticalAlignment="Stretch" x:Name="dtDataEmbarque" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
+                    <DatePicker VerticalAlignment="Stretch" x:Name="dtDataVolta" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
 
                     <Button VerticalAlignment="Bottom" Content="Reservar Passagem" FontFamily="Champagne &amp; Limousines"  Click="AdicionarReservaPassagem" Height="26" Margin="321,-35,10,33"/>
              
