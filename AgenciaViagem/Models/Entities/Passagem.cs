@@ -36,5 +36,6 @@ namespace Models.Entities
 
         //Propriedades Pacotes
         public virtual ICollection<Pacote> _Pacotes { get; set; }
+
     }
 }
