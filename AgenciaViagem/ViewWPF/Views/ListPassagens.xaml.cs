@@ -45,7 +45,8 @@ namespace ViewWPF.Views
         private void AdicionarReservaPassagem(object sender, RoutedEventArgs e)
         {
             PassagemViewModel pvm = DataContext as PassagemViewModel;
-            pvm.Preco = 1000;
+            Random r = new Random();
+            pvm.Preco = r.Next(800,3000);
             pvm.UsuarioId = 2;
             try
             {
