@@ -79,8 +79,8 @@
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Ticket" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Reserva Pacotes" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
+                        <materialDesign:PackIcon Kind="Cart" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Carrinho" FontSize="20" VerticalAlignment="Center" Margin="20 0" />
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60">

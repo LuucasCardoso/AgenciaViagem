@@ -10,7 +10,7 @@
 
     <Grid x:Name="GridPrincipal" Width="auto" Height="445">
 
-        <Grid x:Name="GridSuperior" Width="608" Height="350"  VerticalAlignment="Top">
+        <Grid x:Name="GridSuperior" Height="445"  VerticalAlignment="Top">
 
             <DataGrid x:Name="dgPassagens" CanUserAddRows="False" ItemsSource="{Binding Passagens}" CanUserResizeColumns="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
@@ -46,27 +46,6 @@
             </DataGrid>
 
         </Grid>
-
-        <Grid x:Name="GridInferior">
-
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" RenderTransformOrigin="0.303,0.222">
-
-                <Grid Margin="0, 285, 0, 0">
-                    <!-- número cartão  -->
-                    <TextBox x:Name="Cartao" materialDesign:HintAssist.Hint="Número do Cartão" Background="FloralWhite" Margin="10,99,324,31" />
-                    <!--finalizar compra-->
-                    <Button Height="60" Background="LightSeaGreen" Content="Finalizar Compra" Margin="324,86,10,14" Click="Button_Click"/>
-                    <!--   atualizar    -->
-                    <!--realizar  compra-->
-
-                    <Label x:Name="ErroCompra" Content="Falha na Compra" HorizontalAlignment="Center" Width="103" Foreground="Red" Margin="324,63,181,72" Visibility="Hidden"/>
-                    <Label x:Name="SucessoCompra" Content="Compra Realizada com Sucesso" HorizontalAlignment="Center" Width="181"  Foreground="Green" Margin="417,63,10,72" Visibility="Hidden"/>
-
-                </Grid>
-
-            </materialDesign:TransitioningContent>
-
-        </Grid>
-
+        
     </Grid>
 </UserControl>

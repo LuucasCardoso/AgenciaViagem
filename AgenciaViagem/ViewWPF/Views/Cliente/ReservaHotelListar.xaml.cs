@@ -39,18 +39,5 @@ namespace ViewWPF.Views.Cliente
             dgReservas.DataContext = new ReservaHotelViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(Cartao.Text))
-            {
-                SucessoCompra.Visibility = Visibility.Hidden;
-                ErroCompra.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                SucessoCompra.Visibility = Visibility.Visible;
-                ErroCompra.Visibility = Visibility.Hidden;
-            }
-        }
     }
 }

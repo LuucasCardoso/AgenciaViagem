@@ -9,88 +9,24 @@
              Height="auto" Width="auto">
 
     <Grid x:Name="GridPrincipal" Width="608" Height="445">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
+            <Grid x:Name="GridSuperior" Width="608">
 
-        <Grid x:Name="GridSuperior" Width="608" Height="150" VerticalAlignment="Top">
-            <materialDesign:TransitioningContent x:Name="TrainsitionigContetSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.ColumnSpan="2">
-                
-                <StackPanel Width="608" Height="120" VerticalAlignment="Top">
 
-                    <ComboBox VerticalAlignment="Stretch"  SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeOrigem, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Embarque" Height="26" Background="FloralWhite" Margin="10,10,321,0"/>
-                    <ComboBox VerticalAlignment="Stretch" SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeDestino, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Desembarque" Height="26" Background="FloralWhite" Margin="10,10,321,10"/>
-                    <ComboBox VerticalAlignment="Stretch" SelectedValuePath="EmpresaAereaId" ItemsSource="{Binding EmpresasAereas}" SelectedValue="{Binding EmpresaAereaId, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Linha Aerea"  Height="26"  Background="FloralWhite" Margin="10,0,321,10"/>
-                    <DatePicker VerticalAlignment="Stretch" x:Name="dtDataEmbarque" materialDesign:HintAssist.Hint="Check In" Height="26"  Background="FloralWhite" Margin="321,-190,10,0"/>
-                    <DatePicker VerticalAlignment="Stretch" x:Name="dtDataVolta" materialDesign:HintAssist.Hint="Check Out"  Height="26"  Background="FloralWhite" Margin="321,-120,10,0"/>
+                <ComboBox VerticalAlignment="Stretch"  SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeOrigem, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Embarque" Background="FloralWhite" Height="47" Margin="145,139,144,259"/>
+                <ComboBox VerticalAlignment="Stretch" SelectedValuePath="Nome" ItemsSource="{Binding Cidades}" SelectedValue="{Binding CidadeDestino, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Cidade Desembarque" Background="FloralWhite" Margin="145,74,144,325"/>
+                <ComboBox VerticalAlignment="Stretch" SelectedValuePath="EmpresaAereaId" ItemsSource="{Binding EmpresasAereas}" SelectedValue="{Binding EmpresaAereaId, Mode=TwoWay}" DisplayMemberPath="Nome" materialDesign:HintAssist.Hint="Linha Aerea"  Background="FloralWhite" Margin="145,10,144,388"/>
+                <DatePicker VerticalAlignment="Stretch" x:Name="dtDataEmbarque" materialDesign:HintAssist.Hint="Check In"  Background="FloralWhite" Margin="145,204,145,193"/>
+                <DatePicker VerticalAlignment="Stretch" x:Name="dtDataVolta" materialDesign:HintAssist.Hint="Check Out"  Height="47"  Background="FloralWhite" Margin="145,270,144,127"/>
 
-                    <Button VerticalAlignment="Bottom" Content="Reservar Passagem" FontFamily="Champagne &amp; Limousines"  Click="AdicionarReservaPassagem" Height="26" Margin="321,-35,10,33"/>
-             
-                </StackPanel>
+                <Button VerticalAlignment="Bottom" Content="Reservar Passagem" FontFamily="Champagne &amp; Limousines"  Click="AdicionarReservaPassagem" Height="48" Margin="144,0,145,55"/>
 
-            </materialDesign:TransitioningContent>
-            <Label x:Name="lblMessage" Width="auto" HorizontalAlignment="Center" Foreground="Green" Margin="0,120,0,0"></Label>
-        </Grid>
 
-        <Grid x:Name="GridInferior"  Visibility="Hidden">
 
-            <Grid Margin="0, 150, 0, 0">
-
-                <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Grid.RowSpan="2">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0" Height="260" Background="#FFF3F3F3" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200" Background="Yellow">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="passagem gol" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/gol.png" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Gol"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Column="1" Height="260" Background="Yellow" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="passagem azul" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/azul.png" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Azul"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Column="2" Height="260" Background="Yellow" Margin="10">
-                            <Grid.Effect>
-                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                            </Grid.Effect>
-
-                            <StackPanel Width="200">
-                                <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="passagem latam" Foreground="DodgerBlue"/>
-                                <Image Source="/Assets/latam.png" Width="200" Height="150" Stretch="UniformToFill" />
-                                <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines" Text="Descrição da Passagem da Latam"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"><Run Text="R$ "/><Run Text="X"/></TextBlock>
-                                    <Button Width="100" Content="Comprar" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </Grid>
-                </materialDesign:TransitioningContent>
+                <Label x:Name="lblMessage" Width="auto" HorizontalAlignment="Center" Foreground="Green" Margin="0,400,0,0"></Label>
             </Grid>
-
-        </Grid>
-
+        </materialDesign:TransitioningContent>
 
     </Grid>
+
 </UserControl>

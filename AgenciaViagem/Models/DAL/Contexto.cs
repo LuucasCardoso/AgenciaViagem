@@ -25,5 +25,6 @@ namespace Models.DAL
         public DbSet<Pacote> Pacotes { get; set; }
         public DbSet<Passagem> Passagens { get; set; }
         public DbSet<ReservaHotel> ReservasHotel { get; set; }
+        public DbSet<ReservaPacote> ReservasPacotes { get; set; }
     }
 }

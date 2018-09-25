@@ -38,20 +38,6 @@ namespace ViewWPF.Views.Cliente
             controller.ExcluirPassagem((Passagem)dgPassagens.CurrentItem);
             dgPassagens.DataContext = new PassagemViewModel();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(Cartao.Text))
-            {
-                SucessoCompra.Visibility = Visibility.Hidden;
-                ErroCompra.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                SucessoCompra.Visibility = Visibility.Visible;
-                ErroCompra.Visibility = Visibility.Hidden;
-                dgPassagens.DataContext = new PassagemViewModel();
-            }
-        }
+        
     }
 }

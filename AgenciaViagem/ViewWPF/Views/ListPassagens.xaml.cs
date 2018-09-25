@@ -35,12 +35,7 @@ namespace ViewWPF.Views
             InitializeComponent();
             DataContext = new PassagemViewModel();
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GridInferior.Visibility = Visibility.Visible;
-        }
+        }        
 
         private void AdicionarReservaPassagem(object sender, RoutedEventArgs e)
         {

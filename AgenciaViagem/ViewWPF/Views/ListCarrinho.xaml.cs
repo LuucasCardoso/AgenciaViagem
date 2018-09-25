@@ -23,17 +23,12 @@ namespace ViewWPF.Views
     /// </summary>
     public partial class ListCarrinho : UserControl
     {
+        readonly static ReservaPacoteController controller = new ReservaPacoteController();
         public ListCarrinho()
         {
             InitializeComponent();
-        }
-   
-        private void ComprarMais_Click(object sender, RoutedEventArgs e)
-        {
-            GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new ListPassagens());
-        }
-
+        } 
+ 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(Cartao.Text))
@@ -45,8 +40,6 @@ namespace ViewWPF.Views
             {
                 SucessoCompra.Visibility = Visibility.Visible;
                 ErroCompra.Visibility = Visibility.Hidden;
-                DataGridCompras.DataContext = new EmpresaAereaViewModel();
-                GridListCompras.Visibility = Visibility.Visible;
             }
         }
         private void OnDelete(object sender, RoutedEventArgs e)
