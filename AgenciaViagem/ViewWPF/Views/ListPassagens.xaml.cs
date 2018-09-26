@@ -79,6 +79,7 @@ namespace ViewWPF.Views
                         throw new Exception("Favor preencher Cidade Destino!");
                     }
                     controller.CadastrarPassagem(passagem);
+                    lblMessage.Foreground = Brushes.Green;
                     lblMessage.Content = "Passagem Reservada!";
                     timer.Elapsed += LimpaLabel;
                     timer.AutoReset = false;
@@ -86,6 +87,7 @@ namespace ViewWPF.Views
                 }
                 catch (Exception ex)
                 {
+                    lblMessage.Foreground = Brushes.Red;
                     lblMessage.Content = ex.Message;
                     timer.Elapsed += LimpaLabel;
                     timer.AutoReset = false;
@@ -95,6 +97,7 @@ namespace ViewWPF.Views
             }
             catch (Exception ex)
             {
+                lblMessage.Foreground = Brushes.Red;
                 lblMessage.Content = ex.Message;
                 timer.Elapsed += LimpaLabel;
                 timer.AutoReset = false;
